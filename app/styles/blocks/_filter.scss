@@ -33,5 +33,10 @@
     list-style: none;
     font-size: .8125em;
     color: #6b7072;
+    cursor: pointer;
+
+    &.filter-current {
+      color: #fff;
+    }
   }
 }

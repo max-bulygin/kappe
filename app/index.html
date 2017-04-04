@@ -84,10 +84,12 @@
         </svg>
       </h6>
       <ul class="filter-tags">
-        <li>web design</li>
-        <li>illustration</li>
-        <li>wordpress</li>
-        <li>psd to html</li>
+        <li class="filter-current" data-filter="*">All Works</li>
+        <li data-filter=".design">design</li>
+        <li data-filter=".illustration">illustration</li>
+        <li data-filter=".wordpress">wordpress</li>
+        <li data-filter=".html">html</li>
+        <li data-filter=".development">development</li>
       </ul>
     </div>
     <footer class="main-footer">
@@ -105,12 +107,12 @@
   </aside>
   <main class="container">
     <div class="portfolio">
-      <div class="portfolio-item">
+      <div class="portfolio-item illustration html">
         <img src="images/img-placeholder-light.jpg" alt="">
         <div class="portfolio-item-overlay">
           <div class="overlay-content">
             <h4>Cool Design</h4>
-            <p>development, mobile</p>
+            <p>development, design</p>
             <a href="#" class="portfolio-item-link">
               <svg class="icon icon-baseline">
                 <use xlink:href="images/icons.svg#arrow-right"></use>
@@ -119,12 +121,12 @@
           </div>
         </div>
       </div>
-      <div class="portfolio-item">
+      <div class="portfolio-item wordpress">
         <img src="images/image-placeholder-dark.jpg" alt="">
         <div class="portfolio-item-overlay">
           <div class="overlay-content">
             <h4>Cool Design</h4>
-            <p>development, mobile, app, wordpress</p>
+            <p>wordpress</p>
             <a href="#" class="portfolio-item-link">
               <svg class="icon icon-baseline">
                 <use xlink:href="images/icons.svg#arrow-right"></use>
@@ -133,12 +135,12 @@
           </div>
         </div>
       </div>
-      <div class="portfolio-item">
+      <div class="portfolio-item wordpress illustration">
         <img src="images/img-placeholder-light.jpg" alt="">
         <div class="portfolio-item-overlay">
           <div class="overlay-content">
             <h4>Cool Design</h4>
-            <p>development, mobile</p>
+            <p>wordpress, illustration</p>
             <a href="#" class="portfolio-item-link">
               <svg class="icon icon-baseline">
                 <use xlink:href="images/icons.svg#arrow-right"></use>
@@ -195,7 +197,7 @@
 
     <!-- build:js scripts/main.min.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.3/isotope.pkgd.min.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
