@@ -1,0 +1,59 @@
+.main-aside {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: -400px;
+  bottom: 0;
+  background-color: #242b2e;
+  overflow-y: auto;
+  text-align: right;
+  box-shadow: 10px 0 20px 5px rgba(black, .6);
+  z-index: 20;
+  transition: left .3s ease-in-out;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  &.is-open {
+    left: 0;
+  }
+
+  @media (min-width: $hide-toggle) {
+    left: 0;
+  }
+
+  @media (min-width: 1920px) {
+    width: 15%;
+  }
+}
+
+.main-logo {
+  background-color: #fff;
+  padding: 1.5em;
+}
+
+@import "main-nav";
+
+@import "filter";
+
+.main-footer {
+  border-top: 1px solid $bg-dark;
+  padding: 2.33em 2em 1em;
+  color: #6b7072;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.social {
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    & + li {
+      margin-left: 10px;
+    }
+  }
+}

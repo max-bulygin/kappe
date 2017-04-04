@@ -1,0 +1,128 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-search {
+  width: 0.9285714285714285em;
+}
+
+.icon-user {
+  width: 0.7142857142857142em;
+}
+
+.icon-th-large {
+  width: 0.9285714285714285em;
+}
+
+.icon-cog {
+  width: 0.8571428571428571em;
+}
+
+.icon-volume-off {
+  width: 0.42857142857142855em;
+}
+
+.icon-play {
+  width: 0.7896428571428571em;
+}
+
+.icon-pause {
+  width: 0.8571428571428571em;
+}
+
+.icon-info-circle {
+  width: 0.8571428571428571em;
+}
+
+.icon-arrow-left {
+  width: 0.8928571428571428em;
+}
+
+.icon-arrow-right {
+  width: 0.8214285714285714em;
+}
+
+.icon-arrow-up {
+  width: 0.9285714285714285em;
+}
+
+.icon-arrow-down {
+  width: 0.9285714285714285em;
+}
+
+.icon-calendar {
+  width: 0.9285714285714285em;
+}
+
+.icon-phone {
+  width: 0.7857142857142857em;
+}
+
+.icon-twitter {
+  width: 0.9285714285714285em;
+}
+
+.icon-facebook {
+  width: 0.5881428571428571em;
+}
+
+.icon-chain {
+  width: 0.9285714285714285em;
+}
+
+.icon-linkedin {
+  width: 0.8571428571428571em;
+}
+
+.icon-angle-left {
+  width: 0.375em;
+}
+
+.icon-angle-right {
+  width: 0.33928571428571425em;
+}
+
+.icon-angle-up {
+  width: 0.6428571428571428em;
+}
+
+.icon-angle-down {
+  width: 0.6428571428571428em;
+}
+
+.icon-github-alt {
+  width: 0.9285714285714285em;
+}
+
+.icon-chain-broken {
+  width: 0.9285714285714285em;
+}
+
+.icon-html5 {
+  width: 0.7857142857142857em;
+}
+
+.icon-thumbs-up {
+  width: 0.8928571428571428em;
+}
+
+.icon-thumbs-down {
+  width: 0.8928571428571428em;
+}
+
+.icon-skype {
+  width: 0.8571428571428571em;
+}

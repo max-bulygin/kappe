@@ -1,0 +1,37 @@
+.filter {
+  padding: 1em 1.5em 30px;
+
+  h6 {
+    color: $brand-primary;
+    font-size: 1.23em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    margin-bottom: 23px;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  &.collapsed {
+    padding-bottom: 1em;
+
+    h6 {
+      margin-bottom: 0;
+    }
+
+    .filter-tags {
+      visibility: hidden;
+      height: 0;
+    }
+  }
+}
+
+.filter-tags {
+  color: #fff;
+  transition: height .4s ease;
+
+  li {
+    list-style: none;
+    font-size: .8125em;
+    color: #6b7072;
+  }
+}

@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  float: right;
+  background-color: #bada55;
+  height: 800px;
+
+  @media (min-width: $hide-toggle) {
+    width: calc(100% - 300px);
+  }
+}

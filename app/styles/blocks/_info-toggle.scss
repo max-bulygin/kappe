@@ -1,0 +1,54 @@
+.info-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5.625em;
+  height: 5.625em;
+  background-color: rgba($brand-primary, .9);
+  color: #fff;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 1em;
+
+  button {
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 50%;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.75em;
+    line-height: 1.2;
+  }
+}
+
+.info-toggle-list {
+  width: 300px;
+  background-color: rgba(#000, .7);
+  padding: 15px;
+  margin-left: 100px;
+  line-height: 2.4;
+  transition: margin-left .3s cubic-bezier(0.3, 0.88, 0.58, 1.21);
+
+  &.is-open {
+    margin-left: -230px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
+  .icon {
+    font-size: 120%;
+    margin-right: 5px;
+  }
+}
