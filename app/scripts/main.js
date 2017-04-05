@@ -134,8 +134,19 @@
       $($filterTagsLi).removeClass('filter-current');
       $(this).addClass('filter-current');
       var filterValue = $(this).attr('data-filter');
-      $portfolio.isotope({ filter: filterValue });
+      $portfolio.isotope({filter: filterValue});
     });
+
+    // Social
+
+    var $socialIcon = $('.social-item-link');
+    $socialIcon.mouseenter(function() {
+      $(this)
+        .addClass('animated flipInX')
+        .one(animationEnd, function() {
+          $(this).removeClass('animated flipInX');
+        });
+    })
 
   });
 })();

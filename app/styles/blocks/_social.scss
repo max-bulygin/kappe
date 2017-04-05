@@ -1,0 +1,30 @@
+.social {
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    & + li {
+      margin-left: 10px;
+    }
+  }
+}
+
+.social-item-link {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: .25em;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.social-item-github { background-color:#4078c0; }
+
+.social-item-linkedin { background-color: #0077b5; }
+
+.social-item-facebook { background-color: #3b5998; }
+
+.social-item-twitter { background-color: #1da1f2; }

@@ -46,14 +46,4 @@
   font-weight: 100;
 }
 
-.social {
-
-  li {
-    display: inline-block;
-    list-style: none;
-
-    & + li {
-      margin-left: 10px;
-    }
-  }
-}
+@import "social";
