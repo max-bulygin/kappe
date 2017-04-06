@@ -1,10 +1,19 @@
 .container {
   width: 100%;
   float: right;
-  background-color: #bada55;
-  height: 800px;
+  position: relative;
 
   @media (min-width: $hide-toggle) {
     width: calc(100% - 300px);
+  }
+}
+
+.page-contacts .container {
+  background-size: cover;
+  background: url("../images/map-500w.jpg") no-repeat fixed 100% 0;
+  min-height: 100%;
+
+  @media (min-width: 960px) {
+    background-image: url("../images/map.jpg");
   }
 }

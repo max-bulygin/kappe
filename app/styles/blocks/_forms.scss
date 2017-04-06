@@ -1,0 +1,101 @@
+form:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid $form-border;
+  background-color: #fff;
+  color: #848484;
+  font-size: 14px;
+  line-height: 2;
+  padding-left: 1.28em;
+  padding-right: 1.28em;
+  box-sizing: border-box;
+  height: 58px;
+  border-radius: 0;
+  box-shadow: none;
+
+  &.btn {
+    background-color: $brand-primary;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+}
+
+textarea {
+  height: auto;
+}
+
+input:active, input:focus,
+textarea:active, textarea:focus {
+  outline: none;
+  box-shadow: 2px 2px 6px 0 rgba(#000, .5);
+}
+
+.form-textarea-height {
+  max-height: 126px;
+  margin-bottom: 5px;
+}
+
+.form-column-half {
+
+  & + & {
+    margin-top: 10px;
+  }
+
+  @media (min-width: $form-by-half) {
+    width: calc(50% - 5px);
+    float: left;
+
+    & + & {
+      margin-left: 10px;
+      margin-top: 0;
+    }
+  }
+}
+
+.form-control-wrap {
+  position: relative;
+
+  input {
+    padding-left: calc(1.28em + 58px);
+  }
+
+  & + & {
+    margin-top: .7em;
+  }
+}
+
+.form-control-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 58px;
+  height: 58px;
+  border-right: 1px solid $form-border;
+  box-sizing: border-box;
+  padding: 14px;
+  text-align: center;
+}
+
+.form-icon-border {
+  display: block;
+  border: 1px solid $brand-primary;
+  border-radius: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  min-width: 30px;
+  font-size: 14px;
+
+  .icon {
+    top: 5px;
+    color: $brand-primary;
+  }
+}

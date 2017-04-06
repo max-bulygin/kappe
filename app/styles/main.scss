@@ -1,11 +1,17 @@
 // BASE
 @import "base/variables";
+@import "base/headings";
 @import "base/icons";
+
+html, body { height: 100%; }
 
 body {
   font: 300 100%/1.6 'Roboto', sans-serif;
+  color: $global-text-color;
   background-color: $global-text-color;
 }
+
+a { color: inherit; }
 
 @import "../../node_modules/normalize.scss/normalize";
 
@@ -15,3 +21,5 @@ body {
 @import "blocks/main-aside";
 @import "blocks/container";
 @import "blocks/portfolio-item";
+@import "blocks/forms";
+@import "blocks/contacts";

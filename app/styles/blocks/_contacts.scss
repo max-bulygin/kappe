@@ -1,0 +1,23 @@
+.contacts {
+  margin: 50px auto;
+  width: 70%;
+  padding: 30px;
+  background-color: #fff;
+
+  .heading:first-child {
+    margin-top: -12px;
+    margin-bottom: 0;
+  }
+
+  .paragraph {
+    border-bottom: 1px solid $form-border;
+    padding-bottom: 20px;
+    margin-top: 5px;
+    line-height: 1.9;
+  }
+
+  @media (min-width: 960px) {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+}
