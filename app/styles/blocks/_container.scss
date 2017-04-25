@@ -3,6 +3,11 @@
   float: right;
   position: relative;
   box-sizing: border-box;
+  padding: 15px;
+
+  @media (min-width: 480px) {
+    padding: 25px;
+  }
 
   @media (min-width: $hide-toggle) {
     width: calc(100% - 300px);
@@ -13,16 +18,13 @@
   background-size: cover;
   background: url("../images/map-500w.jpg") no-repeat fixed 100% 0;
   min-height: 100%;
+  padding: 0;
 
   @media (min-width: 960px) {
     background-image: url("../images/map.jpg");
   }
 }
 
-.page-about .container {
-  padding: 15px;
-
-  @media (min-width: 480px) {
-    padding: 25px;
-  }
+.home .container {
+  padding: 0;
 }
