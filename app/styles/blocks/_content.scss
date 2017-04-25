@@ -1,4 +1,4 @@
-.about {
+.content {
   padding: 15px;
   background-color: #fff;
 
@@ -20,8 +20,8 @@
   }
 }
 
-.about-main,
-.about-sidebar {
+.content-main,
+.content-sidebar {
 
   > div {
     margin-bottom: 30px;
@@ -35,7 +35,7 @@
 
 }
 
-.about-grid-column {
+.content-grid-column {
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
