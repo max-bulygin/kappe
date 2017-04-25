@@ -1,5 +1,6 @@
 // BASE
 @import "base/variables";
+@import "base/mixins";
 @import "base/headings";
 @import "base/icons";
 
@@ -13,7 +14,16 @@ body {
 
 a { color: inherit; }
 
+img { max-width: 100%; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 @import "../../node_modules/normalize.scss/normalize";
+@import "../../node_modules/baguettebox.js/dist/baguetteBox";
 
 // BLOCKS
 @import "blocks/nav-toggle";
@@ -23,3 +33,8 @@ a { color: inherit; }
 @import "blocks/portfolio-item";
 @import "blocks/forms";
 @import "blocks/contacts";
+@import "blocks/about";
+@import "blocks/testimonial";
+@import "blocks/progress";
+@import "blocks/services";
+@import "blocks/gallery";

@@ -148,5 +148,42 @@
         });
     })
 
+    // Progress
+
+    var $progressMeters = $('.progress-meter span');
+
+    $progressMeters.map(moveProgressBar);
+
+    function moveProgressBar() {
+      var $this = $(this);
+      var $getPercent = $this.data('progress-percent');
+      var animationLength = 1500;
+      var $percentCounter = $this.closest('.progress-item').children('h6').find('span');
+      // on page load, animate percentage bar to data percentage length
+      // .stop() used to prevent animation queueing
+
+      var value = 0;
+
+      var intId = setInterval( function() {
+        if ( value >= $getPercent ) {
+          clearInterval(intId);
+        }
+        $percentCounter.text((value++) + '%');
+
+      }, animationLength / $getPercent );
+
+
+      $this.stop().animate({
+        width: $getPercent + '%'
+      }, animationLength);
+    }
+
+    // Gallery
+
+    baguetteBox.run('.gallery-items', {
+      // overlayBackgroundColor: 'rgba(36, 43, 46, 0.9)'
+    });
+
+
   });
 })();

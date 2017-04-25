@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="styles/main.css">
 
 </head>
-<body class="page-contacts">
+<body class="page-about">
 <div id="nav-toggle">
   <span></span>
   <span></span>
@@ -69,9 +69,9 @@
   </header>
   <nav class="main-nav">
     <ul>
-      <li class="current-menu-item"><a href="index.html">home</a></li>
+      <li><a href="index.html">home</a></li>
       <li><a href="#">work</a></li>
-      <li><a href="about.html">about</a></li>
+      <li class="current-menu-item"><a href="about.html">about</a></li>
       <li><a href="#">blog</a></li>
       <li><a href="#">services</a></li>
       <li><a href="contacts.html">contacts</a></li>
@@ -105,48 +105,101 @@
 </aside>
 <main class="container">
 
-  <div class="contacts">
-    <h2 class="heading">Get in touch with us</h2>
-    <p class="paragraph">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-      nibh id elit.
-      Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
-    <h2 class="heading">Send us a message</h2>
-    <form action="/" method="get" class="clearfix">
-      <div class="form-column-half">
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-user"><use xlink:href="images/icons.svg#user"></use></svg>
-            </span>
-          </span>
-          <input type="text" placeholder="Name">
-        </div>
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-envelope-o"><use xlink:href="images/icons.svg#envelope-o"></use></svg>
-            </span>
-          </span>
-          <input type="email" placeholder="Email Address">
-        </div>
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-chain"><use xlink:href="images/icons.svg#chain"></use></svg>
-            </span>
-          </span>
-          <input type="url" placeholder="Web Site">
+  <div class="about clearfix">
+
+    <div class="about-grid-column about-main">
+
+      <div class="img">
+        <img src="images/img-placeholder-721x302.jpg" alt="">
+      </div>
+
+      <div>
+        <h2>Who We Are</h2>
+        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+          lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet
+          nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+          ornare odio.</p>
+        <p>Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit
+          amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra,
+          erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci
+          enim.</p>
+      </div>
+
+      <div class="gallery">
+        <h2>Our Certificates</h2>
+        <div class="gallery-items clearfix">
+          <a href="images/fancy-box-thumb.jpg" data-caption="Image caption">
+            <img src="images/fancy-box-227x180.jpg" alt="First image">
+          </a>
+          <a href="images/fancy-box-thumb.jpg">
+            <img src="images/fancy-box-227x180.jpg" alt="Second image">
+          </a>
+          <a href="images/fancy-box-thumb.jpg" data-caption="Image caption">
+            <img src="images/fancy-box-227x180.jpg" alt="First image">
+          </a>
+          <a href="images/fancy-box-thumb.jpg">
+            <img src="images/fancy-box-227x180.jpg" alt="Second image">
+          </a>
         </div>
       </div>
-      <div class="form-column-half">
-        <textarea name="message"
-                  class="form-textarea-height"
-                  cols="30"
-                  rows="5"
-                  placeholder="Message"></textarea>
-        <input type="submit" class="btn">
+    </div><!--  /.about-grid-column  -->
+
+    <div class="about-grid-column about-sidebar">
+
+      <div class="progress">
+        <h2>Our Skills</h2>
+        <div class="progress-item">
+          <h6>Web Development <span>25%</span></h6>
+          <div class="progress-meter">
+            <span data-progress-percent="25"></span>
+          </div>
+        </div>
+        <div class="progress-item">
+          <h6>Web Design <span>25%</span></h6>
+          <div class="progress-meter">
+            <span data-progress-percent="45"></span>
+          </div>
+        </div>
+        <div class="progress-item">
+          <h6>Plugins <span>25%</span></h6>
+          <div class="progress-meter">
+            <span data-progress-percent="50"></span>
+          </div>
+        </div>
+        <div class="progress-item">
+          <h6>Frontend <span>25%</span></h6>
+          <div class="progress-meter">
+            <span data-progress-percent="25"></span>
+          </div>
+        </div>
       </div>
-    </form>
+
+      <div class="testimonial">
+        <h2>Testimonials</h2>
+        <header class="testimonial-header clearfix">
+          <img class="testimonial-img" src="images/img-placeholder-80x80.jpg" alt="pic" width="80" height="80">
+          <h6 class="testimonial-author">Collis Ta’eed - CEO at Envato</h6>
+        </header>
+        <p class="testimonial-content">Sollicitudin lorem quis bibendum auctor, nisi elit consequat ipsum, nec
+          sagittis sem nibh id elit. Duis
+          sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.</p>
+      </div>
+
+      <div class="services">
+        <h2>Services</h2>
+        <ul class="services-list">
+          <li>service 1</li>
+          <li>service 2</li>
+          <li>service 3</li>
+          <li>service 4</li>
+          <li>service 5</li>
+          <li>service 6</li>
+        </ul>
+      </div>
+
+    </div><!--  /.about-grid-column  -->
+
   </div>
 
 </main>
@@ -154,6 +207,7 @@
 <!-- build:js scripts/main.min.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.3/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.min.js"></script>
 <script src="scripts/main.js"></script>
 <!-- endbuild -->
 

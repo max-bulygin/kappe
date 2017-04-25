@@ -40,5 +40,8 @@
   },
   "eslintConfig": {
     "extends": "google"
+  },
+  "dependencies": {
+    "baguettebox.js": "^1.8.2"
   }
 }
