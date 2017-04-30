@@ -1,0 +1,40 @@
+.info-box {
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info-item {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1em 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.info-item-icon {
+  border: 1px solid $brand-primary;
+  border-radius: 50%;
+  padding: .71em;
+  margin-right: 1em;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+
+  svg {
+    fill: $brand-primary;
+    height: 100%;
+  }
+}
+
+.info-item-data {
+  color: #848484;
+}

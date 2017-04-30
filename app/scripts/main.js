@@ -180,10 +180,21 @@
 
     // Gallery
 
-    baguetteBox.run('.gallery-items', {
-      // overlayBackgroundColor: 'rgba(36, 43, 46, 0.9)'
-    });
+    baguetteBox.run('#certificates');
 
+    // Info-box animations
+
+    var $infoItem = $('.info-item');
+    $infoItem.mouseenter(function() {
+
+      var $icon = $(this).children('.info-item-icon');
+
+      $icon
+        .addClass('animated pulse')
+        .one(animationEnd, function() {
+          $(this).removeClass('animated pulse');
+        });
+    })
 
   });
 })();
