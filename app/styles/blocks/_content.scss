@@ -35,6 +35,11 @@
 
 }
 
+.content-main p:last-child {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
 .content-grid-column {
   box-sizing: border-box;
 

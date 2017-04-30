@@ -32,3 +32,13 @@
     }
   }
 }
+
+.gallery-items--no-margin {
+
+  a {
+    @media (min-width: 768px) {
+      width: 33.333% !important;
+      margin-left: 0 !important;
+    }
+  }
+}

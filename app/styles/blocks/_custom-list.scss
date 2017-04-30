@@ -1,0 +1,39 @@
+.custom-list {
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 2;
+  list-style-type: square;
+
+  li {
+    text-transform: capitalize;
+  }
+}
+
+.custom-list-alt {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    transition: all .2s ease;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 1.2em;
+      height: 1.2em;
+      background-image: url('../images/check.svg');
+      background-size: contain;
+      margin-right: .5em;
+      vertical-align: middle;
+      opacity: .3;
+    }
+  }
+
+  li:hover {
+    letter-spacing: 1px;
+
+    &:before {
+      opacity: .5;
+    }
+  }
+}
