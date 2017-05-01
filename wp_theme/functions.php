@@ -17,6 +17,19 @@ function kp_adding_scripts() {
     // Google fonts
     wp_register_style('fonts', 'https://fonts.googleapis.com/css?family=Roboto:100,300,700&amp;subset=cyrillic-ext', null, null, 'all');
     wp_enqueue_style( 'fonts' );
+
+    // jQuery
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, null, true);
+    wp_enqueue_script('jquery');
+
+    // Isotope
+    wp_register_script('isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.3/isotope.pkgd.min.js', array('jquery'), null, true);
+    wp_enqueue_script('isotope');
+
+    // Custom scripts
+    wp_register_script('main', THEME_URI . '/scripts/main.min.js', array('jquery', 'isotope'), THEME_VERSION, true);
+    wp_enqueue_script('main');
 }
 
 add_action( 'wp_enqueue_scripts', 'kp_adding_scripts' );

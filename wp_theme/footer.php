@@ -1,8 +1,4 @@
-<!-- build:js scripts/main.min.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.3/isotope.pkgd.min.js"></script>
-<script src="scripts/main.js"></script>
-<!-- endbuild -->
+<?php wp_footer(); ?>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -13,6 +9,6 @@
     ga('create', 'UA-XXXXX-X', 'auto');
     ga('send', 'pageview');
 </script>
-<!-- Built with love using Web Starter Kit -->
+
 </body>
 </html>
