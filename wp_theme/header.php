@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?php bloginfo('language'); ?>">
+<html lang="<?php language_attributes(); ?>">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,3 +32,5 @@
 
 </head>
 <body <?php body_class()?>>
+
+<?php get_template_part('navigation'); ?>
