@@ -42,3 +42,50 @@ add_action( 'wp_enqueue_scripts', 'kp_adding_scripts' );
 register_nav_menus( array(
   'primary' => __( 'Primary Menu', THEME_NAME )
 ) );
+
+/*-----------------------------------------------------------------------------------
+ * Contact Form 7 Custom Setup
+ *-----------------------------------------------------------------------------------*/
+
+function mod_contact7_form_content( $template, $prop ) {
+  if ( 'form' == $prop ) {
+    return implode( '', array(
+      '<div class="form-column-half">',
+      '<div class="form-control-wrap">',
+      '<span class="form-control-icon">',
+      '<span class="form-icon-border">',
+      '</span>',
+      '</span>',
+      '[text* your-name placeholder"Name"]',
+      '</div>',
+      '<div class="form-control-wrap">',
+      '<span class="form-control-icon">',
+      '<span class="form-icon-border">',
+      '</span>',
+      '</span>',
+      '[email* your-email placeholder"Email Address"]',
+      '</div>',
+      '<div class="form-control-wrap">',
+      '<span class="form-control-icon">',
+      '<span class="form-icon-border">',
+      '</span>',
+      '</span>',
+      '[url* your-site placeholder"Web Site"]',
+      '</div>',
+      '</div>',
+      '<div class="form-column-half">',
+      '[textarea* your-message class:form-textarea-height size:30 placeholder"Message"]',
+      '[submit class:btn "Send Mail"]',
+      '</div>'
+    ) );
+  } else {
+    return $template;
+  }
+}
+
+add_filter(
+  'wpcf7_default_template',
+  'mod_contact7_form_content',
+  10,
+  2
+);
