@@ -26,6 +26,7 @@ img { max-width: 100%; }
 @import "../../node_modules/baguettebox.js/dist/baguetteBox";
 
 // BLOCKS
+@import "blocks/btn";
 @import "blocks/nav-toggle";
 @import "blocks/info-toggle";
 @import "blocks/main-aside";
@@ -36,6 +37,7 @@ img { max-width: 100%; }
 @import "blocks/content";
 @import "blocks/testimonial";
 @import "blocks/progress";
+@import "blocks/project";
 @import "blocks/custom-list";
 @import "blocks/gallery";
 @import "blocks/tag";

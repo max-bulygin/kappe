@@ -38,3 +38,11 @@
 .info-item-data {
   color: #848484;
 }
+
+.info-item-data-link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

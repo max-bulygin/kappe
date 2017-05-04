@@ -17,7 +17,7 @@
  *
  */
 /* eslint-env browser */
-(function() {
+(function () {
   'use strict';
 
   // Check to make sure service workers are supported in the current browser,
@@ -25,62 +25,62 @@
   // service worker from an insecure origin will trigger JS console errors. See
   // http://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features
   var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-      // [::1] is the IPv6 localhost address.
-      window.location.hostname === '[::1]' ||
-      // 127.0.0.1/8 is considered localhost for IPv4.
-      window.location.hostname.match(
-        /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-      )
-    );
+    // [::1] is the IPv6 localhost address.
+    window.location.hostname === '[::1]' ||
+    // 127.0.0.1/8 is considered localhost for IPv4.
+    window.location.hostname.match(
+      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+    )
+  );
 
   if ('serviceWorker' in navigator &&
-      (window.location.protocol === 'https:' || isLocalhost)) {
+    (window.location.protocol === 'https:' || isLocalhost)) {
     navigator.serviceWorker.register('service-worker.js')
-    .then(function(registration) {
-      // updatefound is fired if service-worker.js changes.
-      registration.onupdatefound = function() {
-        // updatefound is also fired the very first time the SW is installed,
-        // and there's no need to prompt for a reload at that point.
-        // So check here to see if the page is already controlled,
-        // i.e. whether there's an existing service worker.
-        if (navigator.serviceWorker.controller) {
-          // The updatefound event implies that registration.installing is set:
-          // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-          var installingWorker = registration.installing;
+      .then(function (registration) {
+        // updatefound is fired if service-worker.js changes.
+        registration.onupdatefound = function () {
+          // updatefound is also fired the very first time the SW is installed,
+          // and there's no need to prompt for a reload at that point.
+          // So check here to see if the page is already controlled,
+          // i.e. whether there's an existing service worker.
+          if (navigator.serviceWorker.controller) {
+            // The updatefound event implies that registration.installing is set:
+            // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
+            var installingWorker = registration.installing;
 
-          installingWorker.onstatechange = function() {
-            switch (installingWorker.state) {
-              case 'installed':
-                // At this point, the old content will have been purged and the
-                // fresh content will have been added to the cache.
-                // It's the perfect time to display a "New content is
-                // available; please refresh." message in the page's interface.
-                break;
+            installingWorker.onstatechange = function () {
+              switch (installingWorker.state) {
+                case 'installed':
+                  // At this point, the old content will have been purged and the
+                  // fresh content will have been added to the cache.
+                  // It's the perfect time to display a "New content is
+                  // available; please refresh." message in the page's interface.
+                  break;
 
-              case 'redundant':
-                throw new Error('The installing ' +
-                                'service worker became redundant.');
+                case 'redundant':
+                  throw new Error('The installing ' +
+                    'service worker became redundant.');
 
-              default:
+                default:
                 // Ignore
-            }
-          };
-        }
-      };
-    }).catch(function(e) {
+              }
+            };
+          }
+        };
+      }).catch(function (e) {
       console.error('Error during service worker registration:', e);
     });
   }
 
   // Your custom JavaScript goes here
 
-  $(document).ready(function() {
-    $('#nav-toggle').click(function() {
+  $(document).ready(function () {
+    $('#nav-toggle').click(function () {
       $(this).toggleClass('open');
       $('.main-aside').toggleClass('is-open');
     });
 
-    $('#info-toggle').click(function() {
+    $('#info-toggle').click(function () {
       $('.info-toggle-list').toggleClass('is-open');
     });
 
@@ -93,29 +93,29 @@
       $filter.addClass('collapsed');
     }
 
-    $filterTagsLi.each(function(index) {
+    $filterTagsLi.each(function (index) {
       $(this).css('animationDelay', index / 10 + 's');
     });
 
-    $('#filter-toggle').click(function() {
+    $('#filter-toggle').click(function () {
       if ($filter.hasClass('collapsed')) {
         $('.filter-tags').height($ulHeight + 'em');
-        $filterTagsLi.each(function() {
+        $filterTagsLi.each(function () {
           $(this)
             .addClass('animated fadeInLeft')
-            .one(animationEnd, function() {
-               $(this).removeClass('animated fadeInLeft');
-             });
+            .one(animationEnd, function () {
+              $(this).removeClass('animated fadeInLeft');
+            });
         });
         $filter.removeClass('collapsed');
       } else {
-        $filterTagsLi.each(function() {
+        $filterTagsLi.each(function () {
           $(this)
             .addClass('animated fadeOutRight')
-            .one(animationEnd, function() {
+            .one(animationEnd, function () {
               $(this).removeClass('animated fadeOutRight');
             });
-        }).delay(500).queue(function(next) {
+        }).delay(500).queue(function (next) {
           $('.filter-tags').height('');
           $filter.addClass('collapsed');
           next();
@@ -130,7 +130,7 @@
       layoutMode: 'fitRows'
     });
 
-    $filterTagsLi.click(function() {
+    $filterTagsLi.click(function () {
       $($filterTagsLi).removeClass('filter-current');
       $(this).addClass('filter-current');
       var filterValue = $(this).attr('data-filter');
@@ -140,13 +140,24 @@
     // Social
 
     var $socialIcon = $('.social-item-link');
-    $socialIcon.mouseenter(function() {
+    $socialIcon.mouseenter(function () {
       $(this)
         .addClass('animated flipInX')
-        .one(animationEnd, function() {
+        .one(animationEnd, function () {
           $(this).removeClass('animated flipInX');
         });
-    })
+    });
+
+    // Like button
+
+    var $likeButton = $('.btn-like');
+    $likeButton.click(function () {
+      $(this)
+        .addClass('animated rollOut')
+        .one(animationEnd, function () {
+          $(this).parent().slideUp();
+        });
+    });
 
     // Progress
 
@@ -164,13 +175,13 @@
 
       var value = 0;
 
-      var intId = setInterval( function() {
-        if ( value >= $getPercent ) {
+      var intId = setInterval(function () {
+        if (value >= $getPercent) {
           clearInterval(intId);
         }
         $percentCounter.text((value++) + '%');
 
-      }, animationLength / $getPercent );
+      }, animationLength / $getPercent);
 
 
       $this.stop().animate({
@@ -185,13 +196,13 @@
     // Info-box animations
 
     var $infoItem = $('.info-item');
-    $infoItem.mouseenter(function() {
+    $infoItem.mouseenter(function () {
 
       var $icon = $(this).children('.info-item-icon');
 
       $icon
         .addClass('animated pulse')
-        .one(animationEnd, function() {
+        .one(animationEnd, function () {
           $(this).removeClass('animated pulse');
         });
     })

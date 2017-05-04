@@ -1,0 +1,31 @@
+.btn {
+  color: #a3a3a3;
+  padding: .78em 1.384em;
+  border: 1px solid #dbdbdb;
+  border-radius: .78em;
+  transition: all .3s ease;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+}
+
+.btn-like {
+  font-size: .8em;
+  color: $brand-primary;
+  border-color: $brand-primary;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &:hover {
+    box-shadow: $default-box-shadow;
+  }
+
+  svg {
+    font-size: 1.4em;
+    top: 2px;
+  }
+}
