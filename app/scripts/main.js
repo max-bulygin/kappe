@@ -148,17 +148,6 @@
         });
     });
 
-    // Like button
-
-    var $likeButton = $('.btn-like');
-    $likeButton.click(function () {
-      $(this)
-        .addClass('animated rollOut')
-        .one(animationEnd, function () {
-          $(this).parent().slideUp();
-        });
-    });
-
     // Progress
 
     var $progressMeters = $('.progress-meter span');

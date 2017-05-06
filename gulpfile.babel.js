@@ -112,12 +112,13 @@ gulp.task('styles', () => {
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
 // to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
 // `.babelrc` file.
-gulp.task('scripts', () =>
+gulp.task('scripts', ['copy-like-it.js'], () =>
     gulp.src([
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/main.js'
+      './app/scripts/main.js',
+      '!app/scripts/like-it.js'
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
@@ -133,6 +134,17 @@ gulp.task('scripts', () =>
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'))
 );
+
+gulp.task('copy-like-it.js', () => {
+  gulp.src('app/scripts/like-it.js')
+    .pipe($.newer('.tmp/scripts'))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe($.uglify({preserveComments: 'some'}))
+    // Output files
+    .pipe($.size({title: 'scripts'}))
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(gulp.dest('.tmp/scripts'))
+});
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {

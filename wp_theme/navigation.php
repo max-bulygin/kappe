@@ -16,7 +16,7 @@
           <svg class="icon icon-phone icon-middle">
             <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#phone'; ?>"></use>
           </svg>
-          <?php echo '+' . $phone; ?></a>
+          <?php echo '+' . esc_html( $phone ); ?></a>
       </li>
     <?php endif; ?>
     <?php if ( get_option( 'email' ) ) : ?>
@@ -25,7 +25,7 @@
           <svg class="icon icon-envelope icon-middle">
             <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#envelope'; ?>"></use>
           </svg>
-          <?php echo $email; ?></a>
+          <?php echo esc_html( $email ); ?></a>
       </li>
     <?php endif; ?>
     <?php if ( get_option( 'skype' ) ) : ?>
@@ -45,8 +45,9 @@
       <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
            alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
     <?php else : ?>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>>"><img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
-                                                                alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>>">
+        <img src="<?php echo THEME_URI . '/images/logo.png'; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+      </a>
     <?php endif; ?>
     <div class="description"><?php echo bloginfo( 'description' ); ?></div>
   </header>
