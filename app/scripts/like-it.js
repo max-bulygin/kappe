@@ -32,5 +32,3 @@ $(document).ready(function () {
     return false;
   });
 });
-
-console.log('test it baby');

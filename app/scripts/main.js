@@ -180,7 +180,8 @@
 
     // Gallery
 
-    baguetteBox.run('#certificates');
+    if ($('#certificates').length)
+      baguetteBox.run('#certificates');
 
     // Info-box animations
 
@@ -194,7 +195,7 @@
         .one(animationEnd, function () {
           $(this).removeClass('animated pulse');
         });
-    })
+    });
 
   });
 })();
