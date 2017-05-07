@@ -71,11 +71,16 @@
       </h6>
       <ul class="filter-tags">
         <li class="filter-current" data-filter="*">All Works</li>
-        <li data-filter=".design">design</li>
-        <li data-filter=".illustration">illustration</li>
-        <li data-filter=".wordpress">wordpress</li>
-        <li data-filter=".html">html</li>
-        <li data-filter=".development">development</li>
+        <?php
+        $args = array(
+            'orderby ' => 'count'
+        );
+        $tags = get_tags( $args );
+        foreach ( $tags as $tag ) {
+          $tag_name = strtolower($tag->name);
+          echo '<li data-filter=".' . str_replace(' ', '-', $tag_name) .'">' . $tag_name . '</li>';
+        }
+        ?>
       </ul>
     </div>
   <?php endif; ?>

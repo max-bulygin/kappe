@@ -1,93 +1,35 @@
 <?php get_header(); ?>
 
 <main class="container">
-    <div class="portfolio">
-        <div class="portfolio-item illustration html">
-            <img src="images/img-placeholder-light.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>development, design</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+  <div class="portfolio">
+    <?php
+    $args = array( 'post_type' => 'portfolio', 'posts_per_page' => 9 );
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <?php
+      $classes_raw = wp_get_post_tags( $post->ID, array( 'fields' => 'names' ) );
+      $classes_front = implode( ', ', $classes_raw );
+      $classes_front = strtolower( $classes_front );
+      $classes_back = str_replace(' ', '-', $classes_raw);
+      $classes_back = implode( ' ', $classes_back );
+      $classes_back = strtolower( $classes_back );
+      ?>
+      <div class="portfolio-item <?php echo $classes_back; ?>">
+        <?php the_post_thumbnail( 'portfolio-grid' ); ?>
+        <div class="portfolio-item-overlay">
+          <div class="overlay-content">
+            <h4><?php the_title(); ?></h4>
+            <p><?php echo $classes_front; ?></p>
+            <a href="<?php the_permalink(); ?>" class="portfolio-item-link">
+              <svg class="icon icon-baseline">
+                <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#arrow-right'; ?>"></use>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="portfolio-item wordpress">
-            <img src="images/image-placeholder-dark.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>wordpress</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item wordpress illustration">
-            <img src="images/img-placeholder-light.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>wordpress, illustration</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item">
-            <img src="images/image-placeholder-dark.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>development, mobile</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item">
-            <img src="images/img-placeholder-light.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>development, mobile, app, wordpress</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item">
-            <img src="images/image-placeholder-dark.jpg" alt="">
-            <div class="portfolio-item-overlay">
-                <div class="overlay-content">
-                    <h4>Cool Design</h4>
-                    <p>development, mobile</p>
-                    <a href="#" class="portfolio-item-link">
-                        <svg class="icon icon-baseline">
-                            <use xlink:href="images/icons.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+      </div>
+    <?php endwhile; ?>
+  </div>
 </main>
 
 <?php get_footer(); ?>
