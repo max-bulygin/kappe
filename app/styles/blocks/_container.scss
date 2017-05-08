@@ -20,7 +20,8 @@
 }
 
 .single .container,
-.page-template-default .container {
+.page-template-default .container,
+.page-template-about .container {
   padding: 15px;
 
   @media (min-width: 480px) {

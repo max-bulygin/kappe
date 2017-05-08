@@ -180,8 +180,9 @@
 
     // Gallery
 
-    if ($('#certificates').length)
+    if ($('#certificates').length) {
       baguetteBox.run('#certificates');
+    }
 
     // Info-box animations
 
@@ -197,5 +198,27 @@
         });
     });
 
+    // Testimonials Carousel
+
+    var $testimonialCarousel = $('.testimonial-carousel');
+
+    $testimonialCarousel.owlCarousel({
+      items: 1,
+      nav: false,
+      dots: false,
+      autoHeight: true,
+      loop: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      itemElement: 'aside',
+      animateOut: 'fadeOutLeft',
+      animateIn: 'fadeInRight'
+    });
+
   });
+
+  window.onload = function() {
+    $('.testimonial-carousel').trigger('refresh.owl.carousel');
+  };
+
 })();

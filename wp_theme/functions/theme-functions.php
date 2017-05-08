@@ -14,6 +14,11 @@ function kp_adding_scripts()
   wp_register_style( 'animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', null, null, 'all' );
   wp_enqueue_style( 'animate' );
 
+  // Owl Carousel
+  wp_register_style( 'owl.carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css', null, null, 'all' );
+  wp_register_style( 'owl.carousel.theme', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', null, null, 'all' );
+  wp_register_script( 'owl.carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array( 'jquery' ), null, true );
+
   // Google fonts
   wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Roboto:100,300,700&amp;subset=cyrillic-ext', null, null, 'all' );
   wp_enqueue_style( 'fonts' );
@@ -28,8 +33,17 @@ function kp_adding_scripts()
   wp_enqueue_script( 'isotope' );
 
   // Custom scripts
-  wp_register_script( 'main', THEME_URI . '/scripts/main.min.js', array( 'jquery', 'isotope' ), THEME_VERSION, true );
+  wp_register_script( 'main', THEME_URI . '/scripts/main.min.js', array( 'jquery', 'isotope', 'baguette', 'owl.carousel' ), THEME_VERSION, true );
   wp_enqueue_script( 'main' );
+
+  // Baguette Lightbox
+  wp_register_script( 'baguette', 'https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.min.js', null, THEME_VERSION, true );
+  if ( is_page_template( 'about.php' ) ) {
+    wp_enqueue_script( 'baguette' );
+    wp_enqueue_style( 'owl.carousel' );
+    wp_enqueue_style( 'owl.carousel.theme' );
+    wp_enqueue_script( 'owl.carousel' );
+  }
 
   if ( is_singular( 'portfolio' ) ) {
 
@@ -59,6 +73,7 @@ function kp_theme_setup()
   add_image_size( 'portfolio-featured', 720, 560, array( 'left', 'top' ) );
   add_image_size( 'portfolio-related', 240, 182, array( 'left', 'top' ) );
   add_image_size( 'portfolio-grid', 405, 311, array( 'left', 'top' ) );
+  add_image_size( 'about-featured', 720, 300, array( 'left', 'top' ) );
   add_image_size( 'thumb-80x80', 80, 80, array( 'left', 'top' ) );
 }
 
