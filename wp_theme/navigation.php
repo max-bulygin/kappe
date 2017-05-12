@@ -46,7 +46,8 @@
            alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
     <?php else : ?>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>>">
-        <img src="<?php echo THEME_URI . '/images/logo.png'; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+        <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
+             alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
       </a>
     <?php endif; ?>
     <div class="description"><?php echo bloginfo( 'description' ); ?></div>
@@ -62,7 +63,7 @@
     <?php wp_nav_menu( $args ); ?>
   </nav>
   <?php
-  if ( is_home() ) : ?>
+  if ( is_home() || is_front_page() || is_page( 'home' ) ) : ?>
     <div class="filter">
       <h6 id="filter-toggle">Filter
         <svg class="icon icon-th-large icon-baseline">
@@ -73,12 +74,12 @@
         <li class="filter-current" data-filter="*">All Works</li>
         <?php
         $args = array(
-            'orderby ' => 'count'
+          'orderby ' => 'count'
         );
         $tags = get_tags( $args );
         foreach ( $tags as $tag ) {
-          $tag_name = strtolower($tag->name);
-          echo '<li data-filter=".' . str_replace(' ', '-', $tag_name) .'">' . $tag_name . '</li>';
+          $tag_name = strtolower( $tag->name );
+          echo '<li data-filter=".' . str_replace( ' ', '-', $tag_name ) . '">' . $tag_name . '</li>';
         }
         ?>
       </ul>

@@ -4,22 +4,37 @@ get_header(); ?>
 
 <main class="container">
 
-  <?php
+  <div class="content clearfix">
 
-  if ( have_posts() ) :
-    while ( have_posts() ) : the_post(); ?>
+    <div class="content-grid-column content-main">
 
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <?php the_content(); ?>
+      <?php
 
-    <?php endwhile;
+      if ( have_posts() ) :
+        while ( have_posts() ) : the_post(); ?>
 
-  else:
-    echo '<p>No content found</p>';
+          <h2><?php the_title(); ?></h2>
+          <?php the_content(); ?>
 
-  endif;
+        <?php endwhile;
 
-  ?>
+      else:
+
+        echo '<p>No content found</p>';
+
+      endif;
+
+      ?>
+
+    </div><!--  /.content-grid-column  -->
+
+    <div class="content-grid-column content-sidebar">
+
+      <?php get_sidebar(); ?>
+
+    </div><!--  /.content-grid-column  -->
+
+  </div>
 
 </main>
 

@@ -2,65 +2,63 @@
 
   <div class="progress">
     <h2>Our Skills</h2>
-    <div class="progress-item">
-      <h6>Web Development <span>25%</span></h6>
-      <div class="progress-meter">
-        <span data-progress-percent="25"></span>
+    <?php
+    $args = array(
+      'type' => 'key_value'
+    );
+    $skills = rwmb_meta( 'skill', $args );
+    foreach ( $skills as $skill ) : ?>
+      <div class="progress-item">
+        <h6><?php echo $skill[ 0 ]; ?><span></span></h6>
+        <div class="progress-meter">
+          <span data-progress-percent="<?php echo $skill[ 1 ]; ?>"></span>
+        </div>
       </div>
-    </div>
-    <div class="progress-item">
-      <h6>Web Design <span>25%</span></h6>
-      <div class="progress-meter">
-        <span data-progress-percent="45"></span>
-      </div>
-    </div>
-    <div class="progress-item">
-      <h6>Plugins <span>25%</span></h6>
-      <div class="progress-meter">
-        <span data-progress-percent="50"></span>
-      </div>
-    </div>
-    <div class="progress-item">
-      <h6>Frontend <span>25%</span></h6>
-      <div class="progress-meter">
-        <span data-progress-percent="25"></span>
-      </div>
-    </div>
+    <?php endforeach; ?>
   </div>
 
   <div class="testimonial">
     <h2><?php _e( 'Testimonials', 'kappe' ) ?></h2>
     <div class="testimonial-carousel owl-carousel">
-    <?php
-    $args = array(
-      'post_type' => 'testimonial',
-      'post_per_page' => 3
-    );
-    $testimonials = new WP_Query( $args );
-    while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
-      <div>
-        <header class="testimonial-header clearfix">
-          <?php the_post_thumbnail( 'thumb-80x80', array(
-            'class' => 'testimonial-img'
-          ) ); ?>
-          <h6 class="testimonial-author"><?php the_title(); ?></h6>
-        </header>
-        <p class="testimonial-content"><?php echo get_the_content(); ?></p>
-      </div>
-    <?php endwhile; ?>
+      <?php
+      $args = array(
+        'post_type' => 'testimonial',
+        'post_per_page' => 3
+      );
+      $testimonials = new WP_Query( $args );
+      while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
+        <div>
+          <header class="testimonial-header clearfix">
+            <?php the_post_thumbnail( 'thumb-80x80', array(
+              'class' => 'testimonial-img'
+            ) ); ?>
+            <?php the_title( '<h6 class="testimonial-author">', '</h6>' ); ?>
+          </header>
+          <p class="testimonial-content"><?php echo get_the_content(); ?></p>
+        </div>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
     </div>
   </div>
 
+  <?php
+  $args = array(
+    'post_type' => 'service'
+  );
+  $services = new WP_Query( $args );
+
+  if ( $services->have_posts() ) : ?>
   <div class="services">
-    <h2>Services</h2>
+    <h2><?php _e( 'Services', 'kappe' ) ?></h2>
     <ul class="custom-list">
-      <li>service 1</li>
-      <li>service 2</li>
-      <li>service 3</li>
-      <li>service 4</li>
-      <li>service 5</li>
-      <li>service 6</li>
+      <?php
+      while ( $services->have_posts() ):$services->the_post();
+        the_title( '<li>', '</li>' );
+      endwhile;
+      wp_reset_postdata();
+      ?>
     </ul>
   </div>
+  <?php endif; ?>
 
-</div><!--  /.content-grid-column  -->
+  </div><!--  /.content-grid-column  -->

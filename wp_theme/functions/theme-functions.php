@@ -70,11 +70,30 @@ function kp_theme_setup()
 
   // add theme support
   add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-formats', array(
+    'image',
+    'quote',
+    'aside',
+    'gallery'
+  ) );
+
   add_image_size( 'portfolio-featured', 720, 560, array( 'left', 'top' ) );
   add_image_size( 'portfolio-related', 240, 182, array( 'left', 'top' ) );
   add_image_size( 'portfolio-grid', 405, 311, array( 'left', 'top' ) );
   add_image_size( 'about-featured', 720, 300, array( 'left', 'top' ) );
+  add_image_size( 'certificate-thumb', 227, 180, array( 'left', 'top' ) );
   add_image_size( 'thumb-80x80', 80, 80, array( 'left', 'top' ) );
+
+  // register sidebar
+  register_sidebar( array(
+    'name' => 'Default Sidebar',
+    'id' => 'default-sidebar',
+    'description' => 'Common Sidebar',
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    'after_widget' => '</li>',
+    'before_title' => '<h2 class="widget-title">',
+    'after_title' => '</h2>'
+  ) );
 }
 
 add_action( 'after_setup_theme', 'kp_theme_setup' );
@@ -284,8 +303,11 @@ function kp_testimonials_post_type()
     'labels' => $labels,
     'public' => true,
     'has_archive' => false,
-    'publicly_queryable' => true,
-    'query_var' => true,
+    'exclude_from_search' => true,
+    'show_in_admin_bar' => false,
+    'show_in_nav_menus' => false,
+    'publicly_queryable' => false,
+    'query_var' => false,
     'rewrite' => true,
     'capability_type' => 'post',
     'hierarchical' => false,
@@ -295,8 +317,7 @@ function kp_testimonials_post_type()
       'thumbnail',
     ),
     'menu_position' => 5,
-    'menu_icon' => 'dashicons-megaphone',
-    'exclude_from_search' => true,
+    'menu_icon' => 'dashicons-megaphone'
   );
 
   register_post_type( 'testimonial', $args );
@@ -325,10 +346,102 @@ function kp_posts_custom_columns( $column_name, $id )
 add_filter( 'manage_testimonial_posts_columns', 'kp_testimonials_thumbnail_columns', 5 );
 add_action( 'manage_posts_custom_column', 'kp_posts_custom_columns', 5, 2 );
 
+// Certificates
+
+function kp_certificate_post_type()
+{
+  $labels = array(
+    'name' => 'Certificates',
+    'singular_name' => 'Certificate',
+    'add_new' => 'Add Certificate',
+    'all_items' => 'All Certificates',
+    'add_new_item' => 'Add New Certificate',
+    'edit_item' => 'Edit Certificate',
+    'new_item' => 'New Item',
+    'view_item' => 'View Item',
+    'parent_item_colon' => 'Parent Item'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'has_archive' => false,
+    'exclude_from_search' => true,
+    'show_in_admin_bar' => false,
+    'show_in_nav_menus' => false,
+    'publicly_queryable' => false,
+    'query_var' => false,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array(
+      'title',
+      'thumbnail',
+    ),
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-awards',
+  );
+
+  register_post_type( 'certificate', $args );
+}
+
+add_action( 'init', 'kp_certificate_post_type' );
+
+// Move featured image box from sidebar
+
+function kp_certificate_featured_image()
+{
+  remove_meta_box( 'postimagediv', 'certificate', 'side' );
+  add_meta_box( 'postimagediv', __( 'Certificate Image', 'kappe' ), 'post_thumbnail_meta_box', 'certificate', 'normal', 'high' );
+}
+
+add_action( 'do_meta_boxes', 'kp_certificate_featured_image' );
+
+// Services
+
+function kp_service_post_type()
+{
+  $labels = array(
+    'name' => 'Services',
+    'singular_name' => 'Service',
+    'add_new' => 'Add Service',
+    'all_items' => 'All Services',
+    'add_new_item' => 'Add New Service',
+    'edit_item' => 'Edit Service',
+    'new_item' => 'New Item',
+    'view_item' => 'View Item',
+    'parent_item_colon' => 'Parent Item'
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'has_archive' => false,
+    'exclude_from_search' => true,
+    'show_in_admin_bar' => false,
+    'show_in_nav_menus' => false,
+    'publicly_queryable' => false,
+    'query_var' => false,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array(
+      'title',
+      'editor',
+      'thumbnail',
+    ),
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-hammer',
+  );
+
+  register_post_type( 'service', $args );
+}
+
+add_action( 'init', 'kp_service_post_type' );
+
 // Project features repeating fields with Meta Box plugin
 
-add_filter( 'rwmb_meta_boxes', 'kp_meta_boxes_features' );
-function kp_meta_boxes_features( $meta_boxes )
+function kp_project_features_meta_box( $meta_boxes )
 {
   $meta_boxes[] = array(
     'title' => __( 'Project Features', 'kappe' ),
@@ -345,6 +458,9 @@ function kp_meta_boxes_features( $meta_boxes )
   );
   return $meta_boxes;
 }
+
+add_filter( 'rwmb_meta_boxes', 'kp_project_features_meta_box' );
+
 
 // Likes handler
 
@@ -371,3 +487,49 @@ function kp_like_it()
     exit();
   }
 }
+
+// Skill Meters
+
+function kp_skill_meter_meta_box( $meta_boxes )
+{
+  $meta_boxes[] = array(
+    'title' => __( 'Skills Widget Area', 'kappe' ),
+    'post_types' => 'page',
+    'fields' => array(
+      array(
+        'id' => 'skill',
+        'name' => __( 'Skill', 'kappe' ),
+        'type' => 'key_value',
+        'clone' => true,
+        'sort_clone' => true
+      )
+    ),
+  );
+  return $meta_boxes;
+}
+
+add_filter( 'rwmb_meta_boxes', 'kp_skill_meter_meta_box' );
+
+function kp_filter_skill_meter_meta_box()
+{
+  global $post;
+  if ( !empty( $post ) ) {
+    $page = get_page_template_slug( $post->ID );
+    if ( $page != 'about.php' ) {
+      remove_meta_box( 'skills-widget-area', 'page', 'normal' );
+    }
+  }
+}
+
+add_action( 'admin_head', 'kp_filter_skill_meter_meta_box' );
+
+/*-----------------------------------------------------------------------------------
+ * Clean head
+ *-----------------------------------------------------------------------------------*/
+
+function kp_remove_version()
+{
+  return '';
+}
+
+add_filter( 'the_generator', 'kp_remove_version' );

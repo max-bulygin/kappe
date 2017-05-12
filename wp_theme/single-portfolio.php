@@ -70,12 +70,10 @@
                 <?php endwhile; ?>
                 <!-- end of the loop -->
 
-                <!-- pagination here -->
-
                 <?php wp_reset_postdata(); ?>
 
               <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                <p><?php _e( 'Sorry, no similar projects found', 'kappe' ); ?></p>
               <?php endif; ?>
 
             </div>
