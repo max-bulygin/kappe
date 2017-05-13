@@ -3,6 +3,7 @@
 @import "base/mixins";
 @import "base/headings";
 @import "base/icons";
+@import "base/effects";
 
 html, body { height: 100%; }
 
@@ -43,3 +44,4 @@ img { max-width: 100%; }
 @import "blocks/gallery";
 @import "blocks/tag";
 @import "blocks/info-box";
+@import "blocks/widgets";
