@@ -6,6 +6,15 @@
 
   li {
     text-transform: capitalize;
+    transition: all .2s ease;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      letter-spacing: 1px;
+    }
   }
 }
 
@@ -14,7 +23,6 @@
   padding: 0;
 
   li {
-    transition: all .2s ease;
     text-transform: none;
 
     &:before {
@@ -30,11 +38,7 @@
     }
   }
 
-  li:hover {
-    letter-spacing: 1px;
-
-    &:before {
-      opacity: .5;
-    }
+  li:hover:before {
+    opacity: .5;
   }
 }
