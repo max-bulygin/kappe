@@ -23,7 +23,7 @@
     @media (min-width: 425px) and (max-width: 599px),
     (min-width: 768px) {
       float: left;
-      width: calc(50% - 10px);
+      //width: calc(50% - 10px);
 
       &:nth-child(2n) {
         margin-left: 20px;
@@ -31,13 +31,13 @@
     }
 
     @media (min-width: 768px) {
-      width: 33.333% !important;
+      //width: 33.333% !important;
       margin-left: 0 !important;
       margin-bottom: 0;
     }
 
     @media (min-width: 1300px) {
-      width: calc(33.3333% - 13.3333px);
+      //width: calc(33.3333% - 13.3333px);
       margin-left: 20px;
 
       &:nth-child(3n + 1) {

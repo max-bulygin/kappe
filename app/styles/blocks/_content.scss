@@ -67,6 +67,10 @@
 
   @media (min-width: 1400px) {
     width: 50% !important;
+
+    &.content-sidebar {
+      width: 50% !important;
+    }
   }
 }
 
