@@ -219,11 +219,38 @@
 
     $relatedCarousel.owlCarousel({
       items: 1,
-      nav: false,
-      dots: false,
+      nav: true,
+      dots: true,
       stagePadding: 50,
       loop: true,
-      center: true
+      center: true,
+      responsive:{
+        0:{
+          items:1,
+          stagePadding: 20
+        },
+        480:{
+          items:2,
+          center: false
+        },
+        600:{
+          items:3,
+        },
+        799:{
+          items:2,
+          center: false
+        },
+        1024:{
+          items:1,
+        },
+        1100:{
+          items:2,
+          center: false
+        },
+        1600:{
+          items: 3,
+        }
+      }
     });
 
   });

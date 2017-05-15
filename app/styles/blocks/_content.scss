@@ -66,16 +66,15 @@
   }
 
   @media (min-width: 1400px) {
-    width: 50% !important;
+    width: 50.1% !important;
 
     &.content-sidebar {
-      width: 50% !important;
+      width: 49.9% !important;
     }
   }
 }
 
 .content-widget {
-  box-sizing: border-box;
 
   @media (min-width: 1024px) {
     border-right: 1px solid $block-border-color;
