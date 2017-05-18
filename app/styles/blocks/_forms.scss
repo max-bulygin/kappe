@@ -12,14 +12,10 @@ textarea {
   height: 58px;
   border-radius: 0;
   box-shadow: none;
+}
 
-  &.btn {
-    background-color: $brand-primary;
-    text-transform: uppercase;
-    color: #fff;
-    border: none;
-    outline: none;
-  }
+input[type='submit'] {
+  @extend .btn;
 }
 
 textarea {

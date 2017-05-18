@@ -1,15 +1,32 @@
 .btn {
-  color: #a3a3a3;
-  padding: .78em 1.384em;
-  border: 1px solid #dbdbdb;
-  border-radius: .78em;
-  transition: all .3s ease;
   display: inline-block;
+  color: #fff;
+  background-color: $brand-primary;
+  background-image: $default-gradient-light;
+  padding: .78em 1.384em;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    background-image: $default-gradient-dark;
+  }
+}
+
+.btn-tag {
+  border-radius: .78em;
+  color: #a3a3a3;
+  border: 1px solid #dbdbdb;
+  background-color: transparent;
 
   &:hover {
     color: #fff;
     background-color: $brand-primary;
     border-color: $brand-primary;
+    box-shadow: $default-box-shadow;
   }
 }
 
@@ -17,13 +34,6 @@
   font-size: .8em;
   color: $brand-primary;
   border-color: $brand-primary;
-  cursor: pointer;
-  vertical-align: middle;
-  text-decoration: none;
-
-  &:hover {
-    box-shadow: $default-box-shadow;
-  }
 
   svg {
     font-size: 1.4em;

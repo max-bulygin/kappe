@@ -15,14 +15,14 @@
       height: 3.44em;
       line-height: 3.44em;
       background-color: $bg-menu;
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+      background-image: $default-gradient-light;
       transition: background-color .3s ease;
     }
 
     &.current-menu-item a,
     & a:hover {
       background-color: $brand-primary;
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+      background-image: $default-gradient-dark;
     }
   }
 }
