@@ -1,0 +1,28 @@
+$accordion-pad: 15px;
+
+.ui-accordion-header {
+  background-color: $brand-primary;
+  color: #fff;
+  padding: $accordion-pad;
+  outline: none;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+
+  .icon {
+    float: right;
+    transition: all .3s ease;
+  }
+
+  &-active {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .1) 0, hsla(0, 0%, 100%, .1));
+
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.ui-accordion-content {
+  padding: $accordion-pad;
+  border: 1px solid $block-border-color;
+}

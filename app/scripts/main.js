@@ -226,6 +226,11 @@
       center: true
     });
 
+    $( '#accordion' ).accordion({
+      heightStyle: 'content',
+      icons: false
+    });
+
   });
 
   window.onload = function() {
