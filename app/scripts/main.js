@@ -226,10 +226,12 @@
       center: true
     });
 
-    $( '#accordion' ).accordion({
-      heightStyle: 'content',
-      icons: false
-    });
+    if($( '#accordion' ).length) {
+      $( '#accordion' ).accordion({
+        heightStyle: 'content',
+        icons: false
+      });
+    }
 
   });
 

@@ -4,4 +4,8 @@
 
 .project-description {
   padding-bottom: 25px;
+
+  .no-related & {
+    padding-bottom: 0;
+  }
 }

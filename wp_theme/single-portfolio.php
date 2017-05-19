@@ -16,7 +16,7 @@
 
         <article class="project-description">
           <header>
-            <h2><?php the_title(); ?></h2>
+            <?php the_title('<h2>', '</h2>'); ?>
           </header>
           <?php echo $post->post_content; ?>
 
@@ -27,7 +27,7 @@
           $likes = ( empty( $likes ) ) ? 0 : $likes; ?>
 
           <footer>
-            <a class="btn btn-like"
+            <a class="btn btn-tag btn-like"
                href="<?php echo $link; ?>"
                data-id="<?php echo get_the_ID(); ?>"
                data-nonce="<?php echo $nonce; ?>"
@@ -39,49 +39,17 @@
           </footer>
         </article>
 
-        <div class="gallery">
-          <h2><?php _e( 'Related Projects', 'kappe' ) ?></h2>
-          <?php
-          $tags = wp_get_post_tags( $post->ID );
-
-          if ( $tags ) {
-            $tag_ids = array();
-            foreach ( $tags as $tag ) $tag_ids[] = $tag->term_id;
-
-            $args = array(
-              'post_type' => 'portfolio',
-              'tag__in' => $tag_ids,
-              'post__not_in' => array( $post->ID ),
-              'posts_per_page' => 3
-            );
-
-            $the_query = new WP_Query( $args );
-            ?>
-            <div class="gallery-items gallery-items--no-margin clearfix">
-              <?php if ( $the_query->have_posts() ) : ?>
-
-                <!-- pagination here -->
-
-                <!-- the loop -->
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                  <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail( 'portfolio-related' ) ?>
-                  </a>
-                <?php endwhile; ?>
-                <!-- end of the loop -->
-
-                <?php wp_reset_postdata(); ?>
-
-              <?php else : ?>
-                <p><?php _e( 'Sorry, no similar projects found', 'kappe' ); ?></p>
-              <?php endif; ?>
-
-            </div>
-          <?php } ?>
-        </div>
       </div><!--  /.content-grid-column  -->
 
       <?php get_sidebar( 'portfolio' ); ?>
+
+      <?php
+
+      if ( is_active_sidebar( 'related-posts' ) ) {
+        get_sidebar( 'related' );
+      }
+
+      ?>
 
     </div><!--  /.content  -->
 

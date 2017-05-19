@@ -14,6 +14,7 @@ define( 'OPTS_DIR', THEME_DIR . '/admin-options');
  *-----------------------------------------------------------------------------------*/
 
 require_once ( LIBS_DIR . '/theme-functions.php' );
+require_once ( LIBS_DIR . '/widgets.php' );
 
 /*-----------------------------------------------------------------------------------
  * Admin Options

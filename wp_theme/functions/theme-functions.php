@@ -49,6 +49,10 @@ function kp_adding_scripts()
 
     wp_enqueue_script( 'like-it', THEME_URI . '/scripts/like-it.js', array( 'jquery' ), THEME_VERSION, true );
 
+    wp_enqueue_style( 'owl.carousel' );
+    wp_enqueue_style( 'owl.carousel.theme' );
+    wp_enqueue_script( 'owl.carousel' );
+
     wp_localize_script( 'like-it', 'likeit', array(
       'ajax_url' => admin_url( 'admin-ajax.php' )
     ) );
@@ -84,13 +88,23 @@ function kp_theme_setup()
   add_image_size( 'certificate-thumb', 227, 180, array( 'left', 'top' ) );
   add_image_size( 'thumb-80x80', 80, 80, array( 'left', 'top' ) );
 
-  // register sidebar
+  // register sidebars
   register_sidebar( array(
-    'name' => 'Default Sidebar',
-    'id' => 'default-sidebar',
+    'name' => 'Common Sidebar',
+    'id' => 'common-sidebar',
     'description' => 'Common Sidebar',
-    'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget' => '</li>',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="widget-title">',
+    'after_title' => '</h2>'
+  ) );
+
+  register_sidebar( array(
+    'name' => 'Related Posts Area',
+    'id' => 'related-posts',
+    'description' => 'This sidebar displays related posts. Leave blank if you don\'t need this option.',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
     'before_title' => '<h2 class="widget-title">',
     'after_title' => '</h2>'
   ) );
