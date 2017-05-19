@@ -27,9 +27,7 @@ get_header(); ?>
 
         </div><!--  /.content-grid-column  -->
 
-        <div class="content-grid-column content-sidebar">
-
-        </div><!--  /.content-grid-column  -->
+        <?php get_sidebar(); ?>
 
     </div>
 

@@ -28,6 +28,9 @@ function kp_adding_scripts()
   wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', null, null, true );
   wp_enqueue_script( 'jquery' );
 
+  // jQuery-UI
+  wp_register_script( 'jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array( 'jquery' ), null, true );
+
   // Isotope
   wp_register_script( 'isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.3/isotope.pkgd.min.js', array( 'jquery' ), null, true );
   wp_enqueue_script( 'isotope' );
@@ -43,6 +46,10 @@ function kp_adding_scripts()
     wp_enqueue_style( 'owl.carousel' );
     wp_enqueue_style( 'owl.carousel.theme' );
     wp_enqueue_script( 'owl.carousel' );
+  }
+
+  if ( is_page_template( 'services.php' ) ) {
+    wp_enqueue_script( 'jquery-ui' );
   }
 
   if ( is_singular( 'portfolio' ) ) {

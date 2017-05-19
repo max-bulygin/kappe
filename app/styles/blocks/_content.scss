@@ -31,16 +31,16 @@
 
 }
 
-.content-main p:last-child,
-.content-main footer:last-child {
-  border-bottom: 1px solid $block-border-color;
-  padding-bottom: 30px;
-
-  .no-related & {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-}
+//.content-main p:last-child,
+//.content-main footer:last-child {
+//  border-bottom: 1px solid $block-border-color;
+//  padding-bottom: 30px;
+//
+//  .no-related & {
+//    border-bottom: 0;
+//    padding-bottom: 0;
+//  }
+//}
 
 .content-grid-column {
   box-sizing: border-box;
