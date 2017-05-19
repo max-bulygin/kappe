@@ -223,7 +223,9 @@
       dots: false,
       stagePadding: 50,
       loop: true,
-      center: true
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true
     });
 
     if($( '#accordion' ).length) {
