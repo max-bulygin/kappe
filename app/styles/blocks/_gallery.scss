@@ -7,25 +7,22 @@
     position: relative;
     overflow: hidden;
 
-    //&:hover:after {
+    //&::after {
     //  content: '';
     //  position: absolute;
     //  width: 100%;
     //  left: 0;
     //  top: 0;
     //  bottom: 0;
-    //  background-color: rgba($brand-primary, .1);
-    //  z-index: 10;
     //}
 
-    &:hover {
+    &:hover::after {
       //border-bottom: 5px solid $brand-primary;
-      box-shadow: $default-box-shadow;
     }
 
-    &:hover img {
-      transform: scale(1.2);
-    }
+    //&:hover img {
+    //  transform: scale(1.2);
+    //}
 
     @media (min-width: 425px) and (max-width: 599px),
     (min-width: 768px) {

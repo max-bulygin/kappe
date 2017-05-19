@@ -17,7 +17,7 @@
  *
  */
 /* eslint-env browser */
-(function () {
+(function() {
   'use strict';
 
   // Check to make sure service workers are supported in the current browser,
@@ -36,9 +36,9 @@
   if ('serviceWorker' in navigator &&
     (window.location.protocol === 'https:' || isLocalhost)) {
     navigator.serviceWorker.register('service-worker.js')
-      .then(function (registration) {
+      .then(function(registration) {
         // updatefound is fired if service-worker.js changes.
-        registration.onupdatefound = function () {
+        registration.onupdatefound = function() {
           // updatefound is also fired the very first time the SW is installed,
           // and there's no need to prompt for a reload at that point.
           // So check here to see if the page is already controlled,
@@ -48,7 +48,7 @@
             // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
             var installingWorker = registration.installing;
 
-            installingWorker.onstatechange = function () {
+            installingWorker.onstatechange = function() {
               switch (installingWorker.state) {
                 case 'installed':
                   // At this point, the old content will have been purged and the
@@ -67,20 +67,20 @@
             };
           }
         };
-      }).catch(function (e) {
+      }).catch(function(e) {
       console.error('Error during service worker registration:', e);
     });
   }
 
   // Your custom JavaScript goes here
 
-  $(document).ready(function () {
-    $('#nav-toggle').click(function () {
+  $(document).ready(function() {
+    $('#nav-toggle').click(function() {
       $(this).toggleClass('open');
       $('.main-aside').toggleClass('is-open');
     });
 
-    $('#info-toggle').click(function () {
+    $('#info-toggle').click(function() {
       $('.info-toggle-list').toggleClass('is-open');
     });
 
@@ -93,29 +93,29 @@
       $filter.addClass('collapsed');
     }
 
-    $filterTagsLi.each(function (index) {
+    $filterTagsLi.each(function(index) {
       $(this).css('animationDelay', index / 10 + 's');
     });
 
-    $('#filter-toggle').click(function () {
+    $('#filter-toggle').click(function() {
       if ($filter.hasClass('collapsed')) {
         $('.filter-tags').height($ulHeight + 'em');
-        $filterTagsLi.each(function () {
+        $filterTagsLi.each(function() {
           $(this)
             .addClass('animated fadeInLeft')
-            .one(animationEnd, function () {
+            .one(animationEnd, function() {
               $(this).removeClass('animated fadeInLeft');
             });
         });
         $filter.removeClass('collapsed');
       } else {
-        $filterTagsLi.each(function () {
+        $filterTagsLi.each(function() {
           $(this)
             .addClass('animated fadeOutRight')
-            .one(animationEnd, function () {
+            .one(animationEnd, function() {
               $(this).removeClass('animated fadeOutRight');
             });
-        }).delay(500).queue(function (next) {
+        }).delay(500).queue(function(next) {
           $('.filter-tags').height('');
           $filter.addClass('collapsed');
           next();
@@ -130,7 +130,7 @@
       layoutMode: 'fitRows'
     });
 
-    $filterTagsLi.click(function () {
+    $filterTagsLi.click(function() {
       $($filterTagsLi).removeClass('filter-current');
       $(this).addClass('filter-current');
       var filterValue = $(this).attr('data-filter');
@@ -140,10 +140,10 @@
     // Social
 
     var $socialIcon = $('.social-item-link');
-    $socialIcon.mouseenter(function () {
+    $socialIcon.mouseenter(function() {
       $(this)
         .addClass('animated flipInX')
-        .one(animationEnd, function () {
+        .one(animationEnd, function() {
           $(this).removeClass('animated flipInX');
         });
     });
@@ -164,7 +164,7 @@
 
       var value = 0;
 
-      var intId = setInterval(function () {
+      var intId = setInterval(function() {
         if (value >= $getPercent) {
           clearInterval(intId);
         }
@@ -187,13 +187,13 @@
     // Info-box animations
 
     var $infoItem = $('.info-item');
-    $infoItem.mouseenter(function () {
+    $infoItem.mouseenter(function() {
 
       var $icon = $(this).children('.info-item-icon');
 
       $icon
         .addClass('animated pulse')
-        .one(animationEnd, function () {
+        .one(animationEnd, function() {
           $(this).removeClass('animated pulse');
         });
     });
@@ -213,6 +213,22 @@
       itemElement: 'aside',
       animateOut: 'fadeOutLeft',
       animateIn: 'fadeInRight'
+    });
+
+    var $relatedCarousel = $('.widget_related-items');
+
+    $relatedCarousel.owlCarousel({
+      items: 1,
+      nav: false,
+      dots: false,
+      stagePadding: 50,
+      loop: true,
+      center: true
+    });
+
+    $( '#accordion' ).accordion({
+      heightStyle: 'content',
+      icons: false
     });
 
   });

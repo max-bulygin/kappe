@@ -3,12 +3,13 @@
 @import "base/mixins";
 @import "base/headings";
 @import "base/icons";
+@import "base/effects";
 
 html, body { height: 100%; }
 
 body {
   font: 300 100%/1.6 'Roboto', sans-serif;
-  color: $global-text-color;
+  color: darken($global-text-color, 20%);
   background-color: $global-text-color;
   -webkit-font-smoothing: antialiased;
 }
@@ -43,3 +44,5 @@ img { max-width: 100%; }
 @import "blocks/gallery";
 @import "blocks/tag";
 @import "blocks/info-box";
+@import "blocks/widgets";
+@import "blocks/accordion.jquery-ui";

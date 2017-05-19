@@ -1,0 +1,21 @@
+{
+  "name": "Kappe",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Max Bulygin <maksym.bulygin@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/max-bulygin/kappe",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "imagehover.css": "*"
+  }
+}
