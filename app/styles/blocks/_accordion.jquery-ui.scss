@@ -8,16 +8,21 @@ $accordion-pad: 15px;
   margin-bottom: 0;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 
+  &:not(.ui-accordion-header-active):hover {
+    background-image: $default-gradient-light;
+  }
+
   .icon {
     float: right;
     transition: all .3s ease;
   }
 
   &-active {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, .1) 0, hsla(0, 0%, 100%, .1));
+    background-image: $default-gradient-dark;
 
     .icon {
       transform: rotate(90deg);
+      top: 7px;
     }
   }
 }
