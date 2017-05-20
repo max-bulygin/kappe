@@ -3,9 +3,11 @@
   float: right;
   position: relative;
   box-sizing: border-box;
+  margin-top: 50px;
 
   @media (min-width: $hide-toggle) {
     width: calc(100% - 300px);
+    margin-top: 0;
   }
 }
 
@@ -15,6 +17,10 @@
   padding: 15px;
 
   @media (min-width: 480px) {
+    padding: 25px 25px;
+  }
+
+  @media (min-width: $hide-toggle) {
     padding: 25px;
   }
 }
