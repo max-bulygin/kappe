@@ -120,6 +120,12 @@
             </svg>
           </a>
         </li>
+        <?php if(function_exists('pll_the_languages')){
+          pll_the_languages( array(
+            'show_flags' => 1,
+            'show_names' => 0
+          ) );
+        } ?>
       <?php endif; ?>
     </ul>
     <p class="copy">© <?php echo date( 'Y' ); ?> Kappe. All Rights Reserved</p>
