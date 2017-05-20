@@ -1,48 +1,47 @@
-.info-toggle {
-  font-size: 9px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 5.625em;
-  height: 5.625em;
-  background-color: rgba($brand-primary, .9);
+#info-toggle {
+  border: 2px solid;
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+  line-height: 1.2;
+  text-align: center;
   color: #fff;
-  z-index: 10;
-  box-sizing: border-box;
-  padding: 1em;
+  font-size: 20px;
+  padding: .2em;
+  cursor: pointer;
 
-  button {
-    height: 100%;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 50%;
-    outline: none;
-    background-color: transparent;
-    font-size: 1.75em;
-    line-height: 1.2;
-    text-align: center;
-    padding: 0;
+  .icon {
+    display: block;
   }
+}
 
-  @media (min-width: 600px) {
-    font-size: 13px;
-  }
+.info-toggle {
+  transition: all .2s ease-in-out;
+  position: relative;
 
-  @media (min-width: 960px) {
-    font-size: 16px;
+  @media (min-width: $hide-toggle) {
+    background-color: rgba($brand-primary, .9);
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1em;
   }
 }
 
 .info-toggle-list {
-  width: 300px;
+  width: 280px;
   background-color: rgba(#000, .7);
-  padding: 15px;
-  margin-left: 100px;
+  padding: 1em;
   line-height: 2.4;
-  transition: margin-left .3s cubic-bezier(0.3, 0.88, 0.58, 1.21);
+  transition: all .3s cubic-bezier(0.3, 0.88, 0.58, 1.21);
+  font-size: 16px;
+  position: absolute;
+  margin-top: 9px;
+  left: 200%;
+  box-sizing: border-box;
 
   &.is-open {
-    margin-left: -230px;
+    transform: translateX(-100%);
   }
 
   li {
@@ -62,8 +61,12 @@
     font-size: 120%;
     margin-right: 5px;
   }
+
+  @media (max-width: 560px) {
+    min-width: 100%;
+  }
 }
 
-.admin-bar .info-toggle {
+.admin-bar .nav-container {
   top: 32px;
 }
