@@ -17,10 +17,6 @@
   padding: 15px;
 
   @media (min-width: 480px) {
-    padding: 25px 25px;
-  }
-
-  @media (min-width: $hide-toggle) {
     padding: 25px;
   }
 }
