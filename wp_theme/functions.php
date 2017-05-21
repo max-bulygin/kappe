@@ -8,6 +8,7 @@ define( 'THEME_URI', get_template_directory_uri() );
 
 define( 'LIBS_DIR', THEME_DIR . '/functions');
 define( 'OPTS_DIR', THEME_DIR . '/admin-options');
+define( 'LANG_DIR', THEME_DIR . '/languages');
 
 /*-----------------------------------------------------------------------------------
  * Theme Functions

@@ -18,10 +18,18 @@ get_header(); ?>
         </div>
       <?php endif; ?>
 
-      <div>
-        <h2><?php _e( 'About me', 'kappe' ); ?></h2>
-        <?php echo $post->post_content; ?>
-      </div>
+      <?php
+      if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
+
+          echo '<div>';
+          the_title('<h2>', '</h2>');
+          the_content();
+          echo '</div>';
+
+        endwhile;
+      endif;
+      ?>
 
       <div class="gallery">
         <h2><?php _e( 'Certificates', 'kappe' ); ?></h2>
@@ -40,7 +48,7 @@ get_header(); ?>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
           <?php else : ?>
-            <em><?php _e( 'Sorry, no certificates have been added.', 'kappe' ); ?></em>
+            <em><?php _e( 'Sorry, no certificates have been added yet.', 'kappe' ); ?></em>
           <?php endif; ?>
 
         </div>

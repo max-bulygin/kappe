@@ -88,7 +88,7 @@
         <?php
 
         foreach ( $features as $feature ) {
-          echo "<li>$feature</li>";
+          echo '<li>$feature</li>';
         }
 
         ?>
