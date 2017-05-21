@@ -40,7 +40,7 @@ get_header(); ?>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
           <?php else : ?>
-            <em><?php _e( 'Sorry, no certificates have been added.' ); ?></em>
+            <em><?php _e( 'Sorry, no certificates have been added.', 'kappe' ); ?></em>
           <?php endif; ?>
 
         </div>

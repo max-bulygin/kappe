@@ -20,7 +20,7 @@ get_header(); ?>
 
       else:
 
-        echo '<p>No content found</p>';
+        echo '<p>' . __('No content found', 'kappe') . '</p>';
 
       endif;
 
