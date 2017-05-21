@@ -123,49 +123,53 @@ add_action( 'after_setup_theme', 'kp_theme_setup' );
  * Contact Form 7 Custom Setup
  *-----------------------------------------------------------------------------------*/
 
-function mod_contact7_form_content( $template, $prop )
-{
-  if ( 'form' == $prop ) {
-    return implode( '', array(
-      '<div class="form-column-half">',
-      '<div class="form-control-wrap">',
-      '<span class="form-control-icon">',
-      '<span class="form-icon-border">',
-      '</span>',
-      '</span>',
-      '[text* your-name placeholder"Name"]',
-      '</div>',
-      '<div class="form-control-wrap">',
-      '<span class="form-control-icon">',
-      '<span class="form-icon-border">',
-      '</span>',
-      '</span>',
-      '[email* your-email placeholder"Email Address"]',
-      '</div>',
-      '<div class="form-control-wrap">',
-      '<span class="form-control-icon">',
-      '<span class="form-icon-border">',
-      '</span>',
-      '</span>',
-      '[url* your-site placeholder"Web Site"]',
-      '</div>',
-      '</div>',
-      '<div class="form-column-half">',
-      '[textarea* your-message class:form-textarea-height size:30 placeholder"Message"]',
-      '[submit class:btn "Send Mail"]',
-      '</div>'
-    ) );
-  } else {
-    return $template;
-  }
-}
+// Unload JS and CSS from pages
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 
-add_filter(
-  'wpcf7_default_template',
-  'mod_contact7_form_content',
-  10,
-  2
-);
+//function mod_contact7_form_content( $template, $prop )
+//{
+//  if ( 'form' == $prop ) {
+//    return implode( '', array(
+//      '<div class="form-column-half">',
+//      '<div class="form-control-wrap">',
+//      '<span class="form-control-icon">',
+//      '<span class="form-icon-border">',
+//      '</span>',
+//      '</span>',
+//      '[text* your-name placeholder"Name"]',
+//      '</div>',
+//      '<div class="form-control-wrap">',
+//      '<span class="form-control-icon">',
+//      '<span class="form-icon-border">',
+//      '</span>',
+//      '</span>',
+//      '[email* your-email placeholder"Email Address"]',
+//      '</div>',
+//      '<div class="form-control-wrap">',
+//      '<span class="form-control-icon">',
+//      '<span class="form-icon-border">',
+//      '</span>',
+//      '</span>',
+//      '[url* your-site placeholder"Web Site"]',
+//      '</div>',
+//      '</div>',
+//      '<div class="form-column-half">',
+//      '[textarea* your-message class:form-textarea-height size:30 placeholder"Message"]',
+//      '[submit class:btn "Send Mail"]',
+//      '</div>'
+//    ) );
+//  } else {
+//    return $template;
+//  }
+//}
+//
+//add_filter(
+//  'wpcf7_default_template',
+//  'mod_contact7_form_content',
+//  10,
+//  2
+//);
 
 /*-----------------------------------------------------------------------------------
  * Custom post types
