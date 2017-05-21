@@ -48,11 +48,11 @@
   </div>
   <aside class="main-aside">
     <header class="main-logo">
-      <?php if ( is_home() || is_front_page() ) : ?>
+      <?php if ( is_home() || is_front_page() || is_page( 'home' ) ) : ?>
         <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
              alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
       <?php else : ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>>">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
           <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
                alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
         </a>
@@ -72,13 +72,13 @@
     <?php
     if ( is_home() || is_front_page() || is_page( 'home' ) ) : ?>
       <div class="filter">
-        <h6 id="filter-toggle">Filter
+        <h6 id="filter-toggle"><?php _e('Filter', 'kappe'); ?>
           <svg class="icon icon-th-large icon-baseline">
             <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#th-large'; ?>"></use>
           </svg>
         </h6>
         <ul class="filter-tags">
-          <li class="filter-current" data-filter="*">All Works</li>
+          <li class="filter-current" data-filter="*"><?php _e('All Works', 'kappe'); ?></li>
           <?php
           $args = array(
             'orderby ' => 'count'
@@ -130,7 +130,7 @@
           </li>
         <?php endif; ?>
       </ul>
-      <p class="copy">© <?php echo date( 'Y' ); ?> Kappe. All Rights Reserved</p>
+      <p class="copy">© <?php echo date( 'Y' ); ?> Kappe. All Rights Reserved.</p>
     </footer>
   </aside>
 </div>
