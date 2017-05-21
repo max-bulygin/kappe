@@ -1,9 +1,6 @@
 #nav-toggle {
   width: 40px;
   height: 25px;
-  position: fixed;
-  left: 10px;
-  top: 10px;
   z-index: 100;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
@@ -18,7 +15,7 @@
     position: absolute;
     height: 20%;
     width: 100%;
-    background-color: $brand-primary;
+    background-color: #fff;
     border-radius: 10px;
     opacity: 1;
     left: 0;
@@ -47,11 +44,5 @@
       top: 40%;
       transform: rotate(-135deg);
     }
-  }
-}
-
-.home {
-  #nav-toggle span {
-    background-color: #fff;
   }
 }

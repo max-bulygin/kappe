@@ -36,73 +36,75 @@
 
 </head>
 <body class="page-contacts">
-<div id="nav-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-<div class="info-toggle">
-  <button id="info-toggle">
-    <svg class="icon icon-info-circle icon-baseline">
-      <use xlink:href="images/icons.svg#info-circle"></use>
-    </svg>
-  </button>
-  <ul class="info-toggle-list">
-    <li><a href="tel:+380957033014">
-      <svg class="icon icon-phone icon-middle">
-        <use xlink:href="images/icons.svg#phone"></use>
-      </svg> +380957033014</a></li>
-    <li><a href="mailto:maksym.bulygin@gmail.com">
-      <svg class="icon icon-envelope icon-middle">
-        <use xlink:href="images/icons.svg#envelope"></use>
-      </svg> maksym.bulygin@gmail.com</a></li>
-    <li><a href="skype:bulyginbass">
-      <svg class="icon icon-skype icon-middle">
-        <use xlink:href="images/icons.svg#skype"></use>
-      </svg> bulyginbass</a></li>
-  </ul>
-</div>
-<aside class="main-aside">
-  <header class="main-logo">
-    <a href="#"><img src="images/logo.png" alt="main-logo"></a>
-    <div class="description">some text here</div>
-  </header>
-  <nav class="main-nav">
-    <ul>
-      <li class="current-menu-item"><a href="index.html">home</a></li>
-      <li><a href="#">work</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="#">blog</a></li>
-      <li><a href="#">services</a></li>
-      <li><a href="contacts.html">contacts</a></li>
+<div class="nav-container">
+  <div id="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="info-toggle">
+    <button id="info-toggle">
+      <svg class="icon">
+        <use xlink:href="images/icons.svg#info-circle"></use>
+      </svg>
+    </button>
+    <ul class="info-toggle-list">
+      <li><a href="tel:+380957033014">
+        <svg class="icon icon-phone icon-middle">
+          <use xlink:href="images/icons.svg#phone"></use>
+        </svg> +380957033014</a></li>
+      <li><a href="mailto:maksym.bulygin@gmail.com">
+        <svg class="icon icon-envelope icon-middle">
+          <use xlink:href="images/icons.svg#envelope"></use>
+        </svg> maksym.bulygin@gmail.com</a></li>
+      <li><a href="skype:bulyginbass">
+        <svg class="icon icon-skype icon-middle">
+          <use xlink:href="images/icons.svg#skype"></use>
+        </svg> bulyginbass</a></li>
     </ul>
-  </nav>
-  <footer class="main-footer">
-    <ul class="social">
-      <li><a href="#" class="social-item-link social-item-linkedin">
-        <svg class="icon icon-baseline">
-          <use xlink:href="images/icons.svg#linkedin"></use>
-        </svg>
-      </a></li>
-      <li><a href="#" class="social-item-link social-item-twitter">
-        <svg class="icon icon-baseline">
-          <use xlink:href="images/icons.svg#twitter"></use>
-        </svg>
-      </a></li>
-      <li><a href="#" class="social-item-link social-item-facebook">
-        <svg class="icon icon-baseline">
-          <use xlink:href="images/icons.svg#facebook"></use>
-        </svg>
-      </a></li>
-      <li><a href="#" class="social-item-link social-item-github">
-        <svg class="icon icon-baseline">
-          <use xlink:href="images/icons.svg#github-alt"></use>
-        </svg>
-      </a></li>
-    </ul>
-    <p class="copy">© 2014 Kappe. All Rights Reserved</p>
-  </footer>
-</aside>
+  </div>
+  <aside class="main-aside">
+    <header class="main-logo">
+      <a href="#"><img src="images/logo.png" alt="main-logo"></a>
+      <div class="description">some text here</div>
+    </header>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="#">blog</a></li>
+        <li><a href="services.html">services</a></li>
+        <li class="current-menu-item"><a href="contacts.html">contacts</a></li>
+      </ul>
+    </nav>
+    <footer class="main-footer">
+      <ul class="social">
+        <li><a href="#" class="social-item-link social-item-linkedin">
+          <svg class="icon icon-baseline">
+            <use xlink:href="images/icons.svg#linkedin"></use>
+          </svg>
+        </a></li>
+        <li><a href="#" class="social-item-link social-item-twitter">
+          <svg class="icon icon-baseline">
+            <use xlink:href="images/icons.svg#twitter"></use>
+          </svg>
+        </a></li>
+        <li><a href="#" class="social-item-link social-item-facebook">
+          <svg class="icon icon-baseline">
+            <use xlink:href="images/icons.svg#facebook"></use>
+          </svg>
+        </a></li>
+        <li><a href="#" class="social-item-link social-item-github">
+          <svg class="icon icon-baseline">
+            <use xlink:href="images/icons.svg#github-alt"></use>
+          </svg>
+        </a></li>
+      </ul>
+      <p class="copy">© 2014 Kappe. All Rights Reserved</p>
+    </footer>
+  </aside>
+</div>
 <main class="container">
 
   <div class="contacts">
@@ -111,40 +113,15 @@
       nibh id elit.
       Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
     <h2 class="heading">Send us a message</h2>
-    <form action="/" method="get" class="clearfix">
-      <div class="form-column-half">
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-user"><use xlink:href="images/icons.svg#user"></use></svg>
-            </span>
-          </span>
-          <input type="text" placeholder="Name">
-        </div>
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-envelope-o"><use xlink:href="images/icons.svg#envelope-o"></use></svg>
-            </span>
-          </span>
-          <input type="email" placeholder="Email Address">
-        </div>
-        <div class="form-control-wrap">
-          <span class="form-control-icon">
-            <span class="form-icon-border">
-              <svg class="icon icon-middle icon-chain"><use xlink:href="images/icons.svg#chain"></use></svg>
-            </span>
-          </span>
-          <input type="url" placeholder="Web Site">
-        </div>
+    <form action="/" method="get" class="contact-form clearfix">
+      <div class="form-col-half">
+        <label for="author"><input type="text" name="author" id="author"></label>
+        <label for="email"><input type="email" name="email" id="email"></label>
+        <label for="url"><input type="url" name="url" id="url"></label>
       </div>
-      <div class="form-column-half">
-        <textarea name="message"
-                  class="form-textarea-height"
-                  cols="30"
-                  rows="5"
-                  placeholder="Message"></textarea>
-        <input type="submit">
+      <div class="form-col-half">
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        <input type="submit" name="submit" id="submit">
       </div>
     </form>
   </div>
