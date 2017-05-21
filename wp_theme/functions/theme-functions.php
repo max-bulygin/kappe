@@ -127,49 +127,36 @@ add_action( 'after_setup_theme', 'kp_theme_setup' );
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
-//function mod_contact7_form_content( $template, $prop )
-//{
-//  if ( 'form' == $prop ) {
-//    return implode( '', array(
-//      '<div class="form-column-half">',
-//      '<div class="form-control-wrap">',
-//      '<span class="form-control-icon">',
-//      '<span class="form-icon-border">',
-//      '</span>',
-//      '</span>',
-//      '[text* your-name placeholder"Name"]',
-//      '</div>',
-//      '<div class="form-control-wrap">',
-//      '<span class="form-control-icon">',
-//      '<span class="form-icon-border">',
-//      '</span>',
-//      '</span>',
-//      '[email* your-email placeholder"Email Address"]',
-//      '</div>',
-//      '<div class="form-control-wrap">',
-//      '<span class="form-control-icon">',
-//      '<span class="form-icon-border">',
-//      '</span>',
-//      '</span>',
-//      '[url* your-site placeholder"Web Site"]',
-//      '</div>',
-//      '</div>',
-//      '<div class="form-column-half">',
-//      '[textarea* your-message class:form-textarea-height size:30 placeholder"Message"]',
-//      '[submit class:btn "Send Mail"]',
-//      '</div>'
-//    ) );
-//  } else {
-//    return $template;
-//  }
-//}
-//
-//add_filter(
-//  'wpcf7_default_template',
-//  'mod_contact7_form_content',
-//  10,
-//  2
-//);
+// Change default form markup
+//apply_filters('comment_form_default_fields', $fields);
+
+function mod_contact7_form_content( $template, $prop )
+{
+  if ( 'form' == $prop ) {
+    return implode( '', array(
+      '<div class="form-col-half">',
+      '<label for="author">',
+        '[text* your-name placeholder"Name"]',
+      '</label><label for="email">',
+        '[email* your-email placeholder"Email Address"]',
+      '</label><label for="url">',
+        '[url* your-site placeholder"Web Site"]',
+      '</label></div><div class="form-col-half">',
+        '[textarea* your-message size:30 placeholder"Message"]',
+        '[submit "Send Mail"]',
+      '</div>'
+    ) );
+  } else {
+    return $template;
+  }
+}
+
+add_filter(
+  'wpcf7_default_template',
+  'mod_contact7_form_content',
+  10,
+  2
+);
 
 /*-----------------------------------------------------------------------------------
  * Custom post types
