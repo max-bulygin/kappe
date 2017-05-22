@@ -37,12 +37,6 @@
             </svg>
             <?php echo esc_html( $skype ); ?></a>
         </li>
-        <?php if(function_exists('pll_the_languages')){
-          pll_the_languages( array(
-            'show_flags' => 1,
-            'show_names' => 0
-          ) );
-        } ?>
       <?php endif; ?>
     </ul>
   </div>
@@ -72,13 +66,13 @@
     <?php
     if ( is_home() || is_front_page() || is_page( 'home' ) ) : ?>
       <div class="filter">
-        <h6 id="filter-toggle"><?php _e('Filter', 'kappe'); ?>
+        <h6 id="filter-toggle"><?php _e( 'Filter', 'kappe' ); ?>
           <svg class="icon icon-th-large icon-baseline">
             <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#th-large'; ?>"></use>
           </svg>
         </h6>
         <ul class="filter-tags">
-          <li class="filter-current" data-filter="*"><?php _e('All Works', 'kappe'); ?></li>
+          <li class="filter-current" data-filter="*"><?php _e( 'All Works', 'kappe' ); ?></li>
           <?php
           $args = array(
             'orderby ' => 'count'
@@ -129,6 +123,12 @@
             </a>
           </li>
         <?php endif; ?>
+        <?php if ( function_exists( 'pll_the_languages' ) ) {
+          pll_the_languages( array(
+            'show_flags' => 1,
+            'show_names' => 0
+          ) );
+        } ?>
       </ul>
       <p class="copy">© <?php echo date( 'Y' ); ?> Kappe. All Rights Reserved.</p>
     </footer>

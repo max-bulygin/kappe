@@ -28,6 +28,7 @@ img { max-width: 100%; }
 @import "../../node_modules/baguettebox.js/dist/baguetteBox";
 
 // BLOCKS
+@import "blocks/polylang";
 @import "blocks/btn";
 @import "blocks/nav-toggle";
 @import "blocks/info-toggle";

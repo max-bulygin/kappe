@@ -64,3 +64,54 @@
     }
   }
 }
+
+// WP Calendar Widget
+
+#wp-calendar {
+  width: 100%;
+  caption {
+    text-align: right;
+    color: #333;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  thead {
+    font-size: 10px;
+    th {
+      padding-bottom: 10px;
+    }
+  }
+  tbody {
+    color: #aaa;
+    td {
+      background: #f5f5f5;
+      border: 1px solid #fff;
+      text-align: center;
+      padding: 8px;
+      &:hover {
+        background: #fff;
+      }
+    }
+    .pad {
+      background: none;
+    }
+    #today {
+      background-color: $brand-primary;
+      background-image: $default-gradient-light;
+      color: #fff;
+    }
+  }
+  tfoot {
+    #next {
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+    #prev {
+      font-size: 10px;
+      text-transform: uppercase;
+      padding-top: 10px;
+    }
+  }
+}

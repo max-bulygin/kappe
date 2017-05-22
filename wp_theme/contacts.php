@@ -23,7 +23,7 @@ get_header(); ?>
     </p>
     <h3 class="heading"><?php _e( 'Send a message', 'kappe' ); ?></h3>
 
-    <?php echo do_shortcode('[contact-form-7 id="99" title="Contacts page"]'); ?>
+    <?php echo do_shortcode('[contact-form-7 id="99" title="Contacts page" html_class="clearfix"]'); ?>
 
   </div>
 

@@ -139,7 +139,7 @@
 
     // Social
 
-    var $socialIcon = $('.social-item-link');
+    var $socialIcon = $('.social li');
     $socialIcon.mouseenter(function() {
       $(this)
         .addClass('animated flipInX')
