@@ -1,7 +1,7 @@
 <div class="content-grid-column content-sidebar">
 
   <div class="progress">
-    <h2>Our Skills</h2>
+    <h2><?php _e('Experience', 'kappe')?></h2>
     <?php
     $args = array(
       'type' => 'key_value'

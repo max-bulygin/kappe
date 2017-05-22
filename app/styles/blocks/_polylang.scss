@@ -1,0 +1,14 @@
+.lang-item {
+  display: inline-block;
+
+  a {
+    @extend .social-item-link;
+    //border: 2px solid $brand-primary;
+    background-color: $bg-menu;
+    border: 1px solid #202426;
+  }
+
+  span {
+    color: $global-text-color;
+  }
+}

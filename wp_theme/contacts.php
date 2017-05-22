@@ -17,13 +17,13 @@ get_header(); ?>
 <main class="container">
 
   <div class="contacts">
-    <h3 class="heading"><?php echo __( 'Get in touch with us', THEME_NAME ); ?></h3>
+    <h3 class="heading"><?php _e( 'Get in touch', 'kappe' ); ?></h3>
     <p class="paragraph">
       <?php echo $post->post_content; ?>
     </p>
-    <h3 class="heading"><?php echo __( 'Send us a message', THEME_NAME ); ?></h3>
+    <h3 class="heading"><?php _e( 'Send a message', 'kappe' ); ?></h3>
 
-    <?php echo do_shortcode('[contact-form-7 id="99" title="Contacts page"]'); ?>
+    <?php echo do_shortcode('[contact-form-7 id="99" title="Contacts page" html_class="clearfix"]'); ?>
 
   </div>
 
