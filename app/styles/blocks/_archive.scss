@@ -1,0 +1,32 @@
+.archive-header {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.archive-item {
+  margin-top: 50px;
+
+  figcaption {
+    display: flex;
+  }
+}
+
+.archive-item-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin: auto;
+}
+
+.archive-item-meta {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  border-bottom: 1px dashed $brand-primary;
+  
+  li {
+    width: 33.333%;
+    float: left;
+    padding: .3em .5em;
+    box-sizing: border-box;
+  }
+}

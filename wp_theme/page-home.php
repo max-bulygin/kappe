@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="container">
-  <div class="portfolio">
+  <div class="portfolio-wrapper">
     <?php
     $args = array( 'post_type' => 'portfolio', 'posts_per_page' => 9 );
     $loop = new WP_Query( $args );
