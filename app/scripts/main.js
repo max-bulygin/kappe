@@ -123,7 +123,7 @@
       } // else
     });
 
-    var $portfolio = $('.portfolio');
+    var $portfolio = $('.portfolio-wrapper');
 
     $portfolio.isotope({
       itemSelector: '.portfolio-item',

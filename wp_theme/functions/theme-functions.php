@@ -93,6 +93,7 @@ function kp_theme_setup()
   add_image_size( 'portfolio-grid', 405, 311, array( 'left', 'top' ) );
   add_image_size( 'about-featured', 720, 300, array( 'left', 'top' ) );
   add_image_size( 'certificate-thumb', 227, 180, array( 'left', 'top' ) );
+  add_image_size( 'thumb-200x200', 100, 100, array( 'left', 'top' ) );
   add_image_size( 'thumb-80x80', 80, 80, array( 'left', 'top' ) );
 
   // register sidebars
@@ -136,14 +137,14 @@ function mod_contact7_form_content( $template, $prop )
     return implode( '', array(
       '<div class="form-col-half">',
       '<label for="author">',
-        '[text* your-name placeholder"Name"]',
+      '[text* your-name placeholder"Name"]',
       '</label><label for="email">',
-        '[email* your-email placeholder"Email Address"]',
+      '[email* your-email placeholder"Email Address"]',
       '</label><label for="url">',
-        '[url* your-site placeholder"Web Site"]',
+      '[url* your-site placeholder"Web Site"]',
       '</label></div><div class="form-col-half">',
-        '[textarea* your-message size:30 placeholder"Message"]',
-        '[submit "Send Mail"]',
+      '[textarea* your-message size:30 placeholder"Message"]',
+      '[submit "Send Mail"]',
       '</div>'
     ) );
   } else {
@@ -545,3 +546,18 @@ function kp_remove_version()
 }
 
 add_filter( 'the_generator', 'kp_remove_version' );
+
+/*-----------------------------------------------------------------------------------
+ * Query custom post type tags
+ *-----------------------------------------------------------------------------------*/
+
+function kp_tag_filter( $query )
+{
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ( $query->is_tag ) {
+      $query->set( 'post_type', array( 'portfolio' ) );
+    }
+  }
+}
+
+add_action( 'pre_get_posts', 'kp_tag_filter' );
