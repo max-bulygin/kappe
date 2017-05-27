@@ -202,34 +202,40 @@
 
     var $testimonialCarousel = $('.testimonial-carousel');
 
-    $testimonialCarousel.owlCarousel({
-      items: 1,
-      nav: false,
-      dots: false,
-      autoHeight: true,
-      loop: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      itemElement: 'aside',
-      animateOut: 'fadeOutLeft',
-      animateIn: 'fadeInRight'
-    });
+    if ($testimonialCarousel.length) {
+      $testimonialCarousel.owlCarousel({
+        items: 1,
+        nav: false,
+        dots: false,
+        autoHeight: true,
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        itemElement: 'aside',
+        animateOut: 'fadeOutLeft',
+        animateIn: 'fadeInRight'
+      });
+    }
 
     var $relatedCarousel = $('.widget_related-items');
 
-    $relatedCarousel.owlCarousel({
-      items: 1,
-      nav: false,
-      dots: false,
-      stagePadding: 50,
-      loop: true,
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true
-    });
+    if ($relatedCarousel.length) {
+      $relatedCarousel.owlCarousel({
+        items: 1,
+        nav: false,
+        dots: false,
+        stagePadding: 50,
+        loop: true,
+        center: true,
+        autoplay: true,
+        autoplayHoverPause: true
+      });
+    }
 
-    if($( '#accordion' ).length) {
-      $( '#accordion' ).accordion({
+    var $accordion = $( '#accordion' );
+
+    if($accordion.length) {
+      $accordion.accordion({
         heightStyle: 'content',
         icons: false
       });
