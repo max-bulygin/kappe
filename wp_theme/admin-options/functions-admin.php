@@ -25,9 +25,11 @@ add_action( 'admin_menu', 'kp_add_admin_page' );
 function kp_custom_settings()
 {
   // General
-  register_setting( 'kappe-settings-group', 'first_name' );
-  add_settings_section( 'kappe-sidebar-options', 'Sidebar Options', 'kp_sidebar_options', 'kappe_options' );
-  add_settings_field( 'sidebar-name', 'First Name', 'kp_sidebar_name', 'kappe_options', 'kappe-sidebar-options' );
+  register_setting( 'kappe-settings-group', 'meta_application_name' );
+  register_setting( 'kappe-settings-group', 'meta_application_color' );
+  add_settings_section( 'kappe-application-options', 'Head Options', 'kp_application_options', 'kappe_options' );
+  add_settings_field( 'application-name', 'Meta Application Name', 'kp_application_name', 'kappe_options', 'kappe-application-options' );
+  add_settings_field( 'application-color', 'Mobile Status Bar Color', 'kp_application_color', 'kappe_options', 'kappe-application-options' );
 
   // Contacts
   register_setting( 'kappe-contacts-group', 'phone' );
@@ -54,15 +56,22 @@ function kp_custom_settings()
  * General subpage
  *-----------------------------------------------------------------------------------*/
 
-function kp_sidebar_name()
+function kp_application_name()
 {
-  $first_name = esc_attr(get_option( 'first_name' ));
-  echo '<input type="text" name="first_name" value="' . $first_name . '">';
+  $field_value = esc_attr(get_option( 'meta_application_name' ));
+  echo '<input type="text" name="meta_application_name" value="' . $field_value . '">';
 }
 
-function kp_sidebar_options()
+function kp_application_color()
 {
-  echo 'sidebar info 111';
+  $field_value = esc_attr(get_option( 'meta_application_color' ));
+  echo '<input type="text" name="meta_application_color" value="' . $field_value . '">';
+  echo '<span style="display:inline-block;width:20px;height:20px;vertical-align:middle;background:'. $field_value . '"></span>';
+}
+
+function kp_application_options()
+{
+  echo '<p>Set up your meta-application-name field and status bar color for mobile devices</p>';
 }
 
 function kp_theme_create_page()
