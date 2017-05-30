@@ -92,7 +92,7 @@ function kp_theme_setup()
   add_image_size( 'portfolio-related', 240, 182, array( 'left', 'top' ) );
   add_image_size( 'portfolio-grid', 405, 311, array( 'left', 'top' ) );
   add_image_size( 'about-featured', 720, 300, array( 'left', 'top' ) );
-  add_image_size( 'certificate-thumb', 227, 180, array( 'left', 'top' ) );
+  add_image_size( 'certificate-thumb', 227, 180, array( 'center', 'center' ) );
   add_image_size( 'thumb-200x200', 100, 100, array( 'left', 'top' ) );
   add_image_size( 'thumb-80x80', 80, 80, array( 'left', 'top' ) );
 
