@@ -75,6 +75,11 @@
   // Your custom JavaScript goes here
 
   $(document).ready(function() {
+
+    var isTouch = (('ontouchstart' in window)
+    || (navigator.maxTouchPoints > 0)
+    || (navigator.msMaxTouchPoints > 0));
+
     $('#nav-toggle').click(function() {
       $(this).toggleClass('open');
       $('.main-aside').toggleClass('is-open');
@@ -145,6 +150,10 @@
         .addClass('animated flipInX')
         .one(animationEnd, function() {
           $(this).removeClass('animated flipInX');
+
+          if (isTouch) {
+            window.location.href = $(this).children().attr('href');
+          }
         });
     });
 
