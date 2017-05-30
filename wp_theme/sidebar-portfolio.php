@@ -48,7 +48,7 @@
           </span>
             <a class="info-item-data info-item-data-link"
                target="_blank"
-               href="<?php echo esc_url( $meta_link ); ?>"><?php echo esc_html( $meta_link ); ?></a>
+               href="<?php echo esc_url( $meta_link ); ?>"><?php _e('See project live', 'kappe'); ?></a>
         </li>
       <?php endif; ?>
     </ul>
