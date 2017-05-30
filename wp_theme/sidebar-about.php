@@ -6,15 +6,19 @@
     $args = array(
       'type' => 'key_value'
     );
-    $skills = rwmb_meta( 'skill', $args );
-    foreach ( $skills as $skill ) : ?>
-      <div class="progress-item">
-        <h6><?php echo $skill[ 0 ]; ?><span></span></h6>
-        <div class="progress-meter">
-          <span data-progress-percent="<?php echo $skill[ 1 ]; ?>"></span>
+    if (function_exists('rwmb_meta')) {
+      $skills = rwmb_meta( 'skill', $args );
+      foreach ( $skills as $skill ) : ?>
+        <div class="progress-item">
+          <h6><?php echo $skill[ 0 ]; ?><span></span></h6>
+          <div class="progress-meter">
+            <span data-progress-percent="<?php echo $skill[ 1 ]; ?>"></span>
+          </div>
         </div>
-      </div>
-    <?php endforeach; ?>
+      <?php endforeach;
+    } else {
+      echo '<p>This widget requires <a href="http://metabox.io" target="_blank">Meta Box</a> plugin to be installed</p>';
+    } ?>
   </div>
 
   <div class="testimonial">
