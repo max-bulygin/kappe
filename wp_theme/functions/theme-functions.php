@@ -88,9 +88,9 @@ function kp_theme_setup()
     'gallery'
   ) );
 
-  add_image_size( 'portfolio-featured', 720, 560, array( 'left', 'top' ) );
-  add_image_size( 'portfolio-related', 240, 182, array( 'left', 'top' ) );
-  add_image_size( 'portfolio-grid', 405, 311, array( 'left', 'top' ) );
+  add_image_size( 'portfolio-featured', 720, 560, array( 'center', 'top' ) );
+  add_image_size( 'portfolio-related', 240, 182, array( 'center', 'top' ) );
+  add_image_size( 'portfolio-grid', 405, 311, array( 'center', 'top' ) );
   add_image_size( 'about-featured', 720, 300, array( 'left', 'top' ) );
   add_image_size( 'certificate-thumb', 227, 180, array( 'center', 'center' ) );
   add_image_size( 'thumb-200x200', 100, 100, array( 'left', 'top' ) );
