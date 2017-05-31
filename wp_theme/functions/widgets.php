@@ -45,10 +45,8 @@ class Kp_Related_Posts_Widget extends WP_Widget
 
       $the_query = new WP_Query( $post_args );
       ?>
-      <div class="widget_related-items owl-carousel">
-        <?php if ( $the_query->have_posts() ) : ?>
-
-          <!-- pagination here -->
+      <?php if ( $the_query->have_posts() ) : ?>
+        <div class="widget_related-items owl-carousel">
 
           <!-- the loop -->
           <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -66,11 +64,13 @@ class Kp_Related_Posts_Widget extends WP_Widget
 
           <?php wp_reset_postdata(); ?>
 
-        <?php else : ?>
-          <p><?php _e( 'Sorry, no similar projects found', 'kappe' ); ?></p>
-        <?php endif; ?>
+        </div>
 
-      </div>
+
+      <?php else : ?>
+        <p><?php _e( 'Sorry, no similar projects found', 'kappe' ); ?></p>
+      <?php endif; ?>
+
     <?php } ?>
 
     <?php echo $args[ 'after_widget' ];
