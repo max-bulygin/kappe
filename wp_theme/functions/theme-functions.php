@@ -121,6 +121,20 @@ function kp_theme_setup()
 add_action( 'after_setup_theme', 'kp_theme_setup' );
 
 /*-----------------------------------------------------------------------------------
+ * Remove width and height attributes from img tag
+ *-----------------------------------------------------------------------------------*/
+
+function kp_remove_image_size_attributes( $html ) {
+  return preg_replace( '/(width|height)="\d*"/', '', $html );
+}
+
+// Remove image size attributes from post thumbnails
+add_filter( 'post_thumbnail_html', 'kp_remove_image_size_attributes' );
+
+// Remove image size attributes from images added to a WordPress post
+add_filter( 'image_send_to_editor', 'kp_remove_image_size_attributes' );
+
+/*-----------------------------------------------------------------------------------
  * Contact Form 7 Custom Setup
  *-----------------------------------------------------------------------------------*/
 

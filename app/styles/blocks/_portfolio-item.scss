@@ -76,12 +76,14 @@
     border-bottom: 1px solid #fff;
     width: auto;
     margin-top: 0;
+    display: inline-block;
   }
 }
 
 .overlay-content {
   display: inline-block;
   vertical-align: middle;
+  max-width: 90%;
 }
 
 .portfolio-item-link {
