@@ -31,17 +31,6 @@
 
 }
 
-//.content-main p:last-child,
-//.content-main footer:last-child {
-//  border-bottom: 1px solid $block-border-color;
-//  padding-bottom: 30px;
-//
-//  .no-related & {
-//    border-bottom: 0;
-//    padding-bottom: 0;
-//  }
-//}
-
 .content-grid-column {
   box-sizing: border-box;
 
@@ -56,7 +45,6 @@
 
     &.content-sidebar {
       width: 40%;
-      float: right;
       padding-right: 0;
       padding-left: 30px;
     }
@@ -71,10 +59,10 @@
   }
 
   @media (min-width: 1400px) {
-    width: 50% !important;
+    width: 50.1% !important;
 
     &.content-sidebar {
-      width: 50% !important;
+      width: 49.9% !important;
     }
   }
 }

@@ -12,7 +12,6 @@ body {
   color: darken($global-text-color, 20%);
   background-color: $global-text-color;
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
 }
 
 a { color: inherit; }

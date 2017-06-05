@@ -36,13 +36,13 @@
   line-height: 2.4;
   transition: all .3s cubic-bezier(0.3, 0.88, 0.58, 1.21);
   font-size: 16px;
-  position: absolute;
+  position: fixed;
   margin-top: 9px;
-  left: 200%;
-  box-sizing: border-box;
+  right: -400px;
+  z-index: 20;
 
   &.is-open {
-    transform: translateX(-110%);
+    right: 0;
   }
 
   li {
@@ -61,10 +61,6 @@
   .icon {
     font-size: 120%;
     margin-right: 5px;
-  }
-
-  @media (max-width: 560px) {
-    min-width: 100%;
   }
 }
 

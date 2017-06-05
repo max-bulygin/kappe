@@ -1,7 +1,4 @@
 .container {
-  width: 100%;
-  float: right;
-  position: relative;
   box-sizing: border-box;
   margin-top: 50px;
   padding: 15px;
@@ -13,6 +10,7 @@
   @media (min-width: $hide-toggle) {
     width: calc(100% - 300px);
     margin-top: 0;
+    float: right;
   }
 }
 
