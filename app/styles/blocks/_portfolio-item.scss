@@ -77,6 +77,10 @@
     width: auto;
     margin-top: 0;
     display: inline-block;
+
+    @media (min-width: 860px) {
+      font-size: 14px;
+    }
   }
 }
 
