@@ -34,8 +34,10 @@
     font-size: .8125em;
     color: #6b7072;
     cursor: pointer;
+    text-transform: lowercase;
 
-    &.filter-current {
+    &.filter-current,
+    &:hover {
       color: #fff;
     }
   }
