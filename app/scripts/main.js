@@ -91,7 +91,7 @@
 
     var $filterTagsLi = $('.filter-tags li');
     var $filter = $('.filter');
-    var $ulHeight = $filterTagsLi.length * 1.5384; // em value of 20px/13px
+    var $ulHeight = $filterTagsLi.length * 1.25; // em value of 20px/16px
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     if (window.innerHeight < 820) {

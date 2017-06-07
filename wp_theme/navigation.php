@@ -79,8 +79,7 @@
           );
           $tags = get_tags( $args );
           foreach ( $tags as $tag ) {
-            $tag_name = strtolower( $tag->name );
-            echo '<li data-filter=".' . str_replace( ' ', '-', $tag_name ) . '">' . $tag_name . '</li>';
+            echo '<li data-filter=".' . $tag->slug . '">' . $tag->name . '</li>';
           }
           ?>
         </ul>

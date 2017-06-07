@@ -10,9 +10,8 @@
       $classes_raw = wp_get_post_tags( $post->ID, array( 'fields' => 'names' ) );
       $classes_front = implode( ', ', $classes_raw );
       $classes_front = strtolower( $classes_front );
-      $classes_back = str_replace(' ', '-', $classes_raw);
+      $classes_back = wp_get_post_tags( $post->ID, array( 'fields' => 'slugs' ) );
       $classes_back = implode( ' ', $classes_back );
-      $classes_back = strtolower( $classes_back );
       ?>
       <div class="portfolio-item <?php echo $classes_back; ?>">
         <?php the_post_thumbnail( 'portfolio-grid' ); ?>
