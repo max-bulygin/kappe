@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-06-16 02:17+0300\n"
-"PO-Revision-Date: 2017-06-16 02:18+0300\n"
+"POT-Creation-Date: 2017-06-16 02:43+0300\n"
+"PO-Revision-Date: 2017-06-16 02:49+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -32,6 +32,7 @@ msgstr ""
 "X-Poedit-SearchPath-14: archive.php\n"
 "X-Poedit-SearchPath-15: about.php\n"
 "X-Poedit-SearchPath-16: footer.php\n"
+"X-Poedit-SearchPath-17: functions/widgets.php\n"
 
 #: about.php:35
 msgid "Certificates"
@@ -56,7 +57,18 @@ msgstr "Отправить сообщение"
 #: content-archive.php:36 sidebar-portfolio.php:28
 #, php-format
 msgid "%d Like"
-msgstr "%d Лайк"
+msgid_plural "%d Likes"
+msgstr[0] "%d Лайк"
+msgstr[1] "%d Лайка"
+msgstr[2] "%d Лайков"
+
+#: functions/widgets.php:30
+msgid "Related Projects"
+msgstr "Похожие проекты"
+
+#: functions/widgets.php:71
+msgid "Sorry, no similar projects found"
+msgstr "Похожих проектов не найдено"
 
 #: navigation.php:69
 msgid "Filter"
@@ -97,9 +109,3 @@ msgstr "Особенности проекта"
 #: single-portfolio.php:37
 msgid "Like it"
 msgstr "Мне нравится"
-
-#~ msgid "1 Like"
-#~ msgid_plural "%1$s Likes"
-#~ msgstr[0] "%1$s Лайк"
-#~ msgstr[1] "%1$s Лайка"
-#~ msgstr[2] "%1$s Лайков"
