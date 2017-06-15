@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-05-22 00:35+0300\n"
-"PO-Revision-Date: 2017-05-22 00:41+0300\n"
+"POT-Creation-Date: 2017-06-16 02:17+0300\n"
+"PO-Revision-Date: 2017-06-16 02:18+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -14,20 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-KeywordsList: _e;_n;printf;__\n"
-"X-Poedit-SearchPath-0: services.php\n"
-"X-Poedit-SearchPath-1: sidebar-related.php\n"
-"X-Poedit-SearchPath-2: sidebar-about.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: single-portfolio.php\n"
+"X-Poedit-SearchPath-1: sidebar.php\n"
+"X-Poedit-SearchPath-2: sidebar-related.php\n"
 "X-Poedit-SearchPath-3: sidebar-portfolio.php\n"
-"X-Poedit-SearchPath-4: about.php\n"
-"X-Poedit-SearchPath-5: contacts.php\n"
+"X-Poedit-SearchPath-4: sidebar-about.php\n"
+"X-Poedit-SearchPath-5: services.php\n"
 "X-Poedit-SearchPath-6: page.php\n"
 "X-Poedit-SearchPath-7: navigation.php\n"
 "X-Poedit-SearchPath-8: index.php\n"
-"X-Poedit-SearchPath-9: sidebar.php\n"
-"X-Poedit-SearchPath-10: single-portfolio.php\n"
-"X-Poedit-SearchPath-11: header.php\n"
-"X-Poedit-SearchPath-12: page-home.php\n"
-"X-Poedit-SearchPath-13: footer.php\n"
+"X-Poedit-SearchPath-9: header.php\n"
+"X-Poedit-SearchPath-10: functions.php\n"
+"X-Poedit-SearchPath-11: front-page.php\n"
+"X-Poedit-SearchPath-12: content-archive.php\n"
+"X-Poedit-SearchPath-13: contacts.php\n"
+"X-Poedit-SearchPath-14: archive.php\n"
+"X-Poedit-SearchPath-15: about.php\n"
+"X-Poedit-SearchPath-16: footer.php\n"
 
 #: about.php:35
 msgid "Certificates"
@@ -37,6 +41,10 @@ msgstr "Сертификаты"
 msgid "Sorry, no certificates have been added yet."
 msgstr "Извините, сертификаты пока не добавлены."
 
+#: archive.php:25 index.php:23 page.php:23 services.php:33
+msgid "No content found"
+msgstr "Контент не найден"
+
 #: contacts.php:20
 msgid "Get in touch"
 msgstr "Связаться со мной"
@@ -45,15 +53,16 @@ msgstr "Связаться со мной"
 msgid "Send a message"
 msgstr "Отправить сообщение"
 
-#: index.php:23 page.php:23 services.php:33
-msgid "No content found"
-msgstr "Контент не найден"
+#: content-archive.php:36 sidebar-portfolio.php:28
+#, php-format
+msgid "%d Like"
+msgstr "%d Лайк"
 
-#: navigation.php:75
+#: navigation.php:69
 msgid "Filter"
 msgstr "Фильтр"
 
-#: navigation.php:81
+#: navigation.php:75
 msgid "All Works"
 msgstr "Все Работы"
 
@@ -61,11 +70,11 @@ msgstr "Все Работы"
 msgid "Experience"
 msgstr "Опыт"
 
-#: sidebar-about.php:21
+#: sidebar-about.php:25
 msgid "Testimonials"
 msgstr "Отзывы"
 
-#: sidebar-about.php:52
+#: sidebar-about.php:56
 msgid "Services"
 msgstr "Услуги"
 
@@ -73,13 +82,9 @@ msgstr "Услуги"
 msgid "Project Info"
 msgstr "Информация"
 
-#: sidebar-portfolio.php:28
-#, php-format
-msgid "1 Like"
-msgid_plural "%1$s Likes"
-msgstr[0] "%1$s Лайк"
-msgstr[1] "%1$s Лайка"
-msgstr[2] "%1$s Лайков"
+#: sidebar-portfolio.php:51
+msgid "See project live"
+msgstr "Перейти на сайт"
 
 #: sidebar-portfolio.php:61
 msgid "Tags"
@@ -92,3 +97,9 @@ msgstr "Особенности проекта"
 #: single-portfolio.php:37
 msgid "Like it"
 msgstr "Мне нравится"
+
+#~ msgid "1 Like"
+#~ msgid_plural "%1$s Likes"
+#~ msgstr[0] "%1$s Лайк"
+#~ msgstr[1] "%1$s Лайка"
+#~ msgstr[2] "%1$s Лайков"
