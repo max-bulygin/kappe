@@ -34,7 +34,9 @@
     font-size: .8125em;
     color: #6b7072;
     cursor: pointer;
-    text-transform: lowercase;
+    &:not(:first-child) {
+      text-transform: lowercase;
+    }
 
     &.filter-current,
     &:hover {
