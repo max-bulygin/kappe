@@ -12,6 +12,8 @@ if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
   wpcf7_enqueue_styles();
 }
 
+$shortcode = get_option('cf7_value');
+
 get_header(); ?>
 
 <main class="container">
@@ -23,7 +25,7 @@ get_header(); ?>
     </p>
     <h3 class="heading"><?php _e( 'Send a message', 'kappe' ); ?></h3>
 
-    <?php echo do_shortcode('[contact-form-7 id="99" title="Contacts page" html_class="clearfix"]'); ?>
+    <?php echo do_shortcode( $shortcode ); ?>
 
   </div>
 
