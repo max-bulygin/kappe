@@ -151,13 +151,13 @@ function mod_contact7_form_content( $template, $prop )
     return implode( '', array(
       '<div class="form-col-half">',
       '<label for="author">',
-      '[text* your-name placeholder"Name"]',
+      '[text* your-name placeholder"Name *"]',
       '</label><label for="email">',
-      '[email* your-email placeholder"Email Address"]',
-      '</label><label for="url">',
-      '[url* your-site placeholder"Web Site"]',
+      '[email* your-email placeholder"Email Address *"]',
+      '</label><label for="subject">',
+      '[text* your-subject placeholder"Subject *"]',
       '</label></div><div class="form-col-half">',
-      '[textarea* your-message size:30 placeholder"Message"]',
+      '[textarea* your-message size:30 placeholder"Message *"]',
       '[submit "Send Mail"]',
       '</div>'
     ) );
