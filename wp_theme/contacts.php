@@ -12,7 +12,9 @@ if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
   wpcf7_enqueue_styles();
 }
 
-$shortcode = get_option('cf7_value');
+if ( function_exists( 'pll_current_language' ) ) {
+  $shortcode = ( pll_current_language() == 'ru' ) ? get_option( 'cf7_value_ru' ) : get_option( 'cf7_value_en' );
+}
 
 get_header(); ?>
 
