@@ -88,7 +88,7 @@
     <footer class="main-footer">
       <ul class="social">
         <?php if ( get_option( 'linkedin' ) ) : ?>
-          <li><a href="<?php echo esc_attr( get_option( 'linkedin' ) ); ?>>"
+          <li><a href="<?php echo esc_attr( get_option( 'linkedin' ) ); ?>"
                  class="social-item-link social-item-linkedin">
               <svg class="icon icon-baseline">
                 <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#linkedin'; ?>"></use>
@@ -97,7 +97,7 @@
           </li>
         <?php endif; ?>
         <?php if ( get_option( 'twitter' ) ) : ?>
-          <li><a href="<?php echo esc_attr( get_option( 'twitter' ) ); ?>>"
+          <li><a href="<?php echo esc_attr( get_option( 'twitter' ) ); ?>"
                  class="social-item-link social-item-twitter">
               <svg class="icon icon-baseline">
                 <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#twitter'; ?>"></use>
@@ -106,7 +106,7 @@
           </li>
         <?php endif; ?>
         <?php if ( get_option( 'facebook' ) ) : ?>
-          <li><a href="<?php echo esc_attr( get_option( 'facebook' ) ); ?>>"
+          <li><a href="<?php echo esc_attr( get_option( 'facebook' ) ); ?>"
                  class="social-item-link social-item-facebook">
               <svg class="icon icon-baseline">
                 <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#facebook'; ?>"></use>
@@ -115,7 +115,7 @@
           </li>
         <?php endif; ?>
         <?php if ( get_option( 'github' ) )  : ?>
-          <li><a href="<?php echo esc_attr( get_option( 'github' ) ); ?>>" class="social-item-link social-item-github">
+          <li><a href="<?php echo esc_attr( get_option( 'github' ) ); ?>" class="social-item-link social-item-github">
               <svg class="icon icon-baseline">
                 <use xlink:href="<?php echo THEME_URI . '/images/icons.svg#github-alt'; ?>"></use>
               </svg>
