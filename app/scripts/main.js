@@ -135,6 +135,12 @@
       layoutMode: 'fitRows'
     });
 
+    var $portfolioItem = $('.portfolio-item');
+
+    $portfolioItem.bind('touchstart touchend', function() {
+      $(this).toggleClass('over');
+    });
+
     $filterTagsLi.click(function() {
       $($filterTagsLi).removeClass('filter-current');
       $(this).addClass('filter-current');

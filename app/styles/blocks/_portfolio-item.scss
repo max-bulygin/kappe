@@ -34,7 +34,8 @@
     transition: all .5s ease-in-out;
   }
 
-  &:hover {
+  &:hover,
+  &.over {
     .portfolio-item-overlay {
       opacity: 1;
     }
