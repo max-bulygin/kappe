@@ -26,6 +26,10 @@
     right: 0;
     padding: 1em;
     font-size: 9px;
+
+    .admin-bar & {
+      top: 32px;
+    }
   }
 }
 
@@ -62,8 +66,4 @@
     font-size: 120%;
     margin-right: 5px;
   }
-}
-
-.admin-bar .nav-container {
-  top: 32px;
 }
