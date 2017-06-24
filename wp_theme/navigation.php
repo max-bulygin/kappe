@@ -43,7 +43,7 @@
   <aside class="main-aside">
     <header class="main-logo">
       <?php if ( is_home() || is_front_page() || is_page( 'home' ) ) : ?>
-        <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
+        <img src="<?php echo THEME_URI . '/images/logo.svg'; ?>"
              alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
       <?php else : ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">

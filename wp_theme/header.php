@@ -29,6 +29,10 @@
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="<?php echo esc_attr(get_option( 'meta_application_color' )); ?>">
 
+    <!-- Favicon   -->
+    <link rel="shortcut icon" href="<?php echo THEME_URI . '/favicon.ico'; ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo THEME_URI . '/favicon.ico'; ?>" type="image/x-icon">
+
     <?php wp_head(); ?>
 
 </head>
