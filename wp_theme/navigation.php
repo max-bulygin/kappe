@@ -47,7 +47,7 @@
              alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
       <?php else : ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <img src="<?php echo THEME_URI . '/images/logo.png'; ?>"
+          <img src="<?php echo THEME_URI . '/images/logo.svg'; ?>"
                alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
         </a>
       <?php endif; ?>
